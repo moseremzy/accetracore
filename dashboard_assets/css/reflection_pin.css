@@ -1,0 +1,206 @@
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', sans-serif; /* Primary font */
+        font-weight: 400;
+        color: #333; /* Dark text for readability */
+        background-color: rgb(225, 230, 231);
+    }
+  
+    .modal {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+    }
+
+    /* Modal Content */
+    .modal-content {
+        background: white;
+        padding: 20px;
+        width: 90%;
+        max-width: 400px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    /* Modal Title */
+    .modal-content h2 {
+        color: #d9534f;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    /* Modal Text */
+    .modal-content p {
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    /* Reflection PIN Input */
+    .modal-content input {
+        width: 80%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        text-align: center;
+        outline: none;
+    }
+
+    /* Error Message */
+    .error-msg {
+        color: red;
+        font-size: 12px;
+        margin-top: 5px;
+        display: none;
+    }
+
+    /* Buttons */
+    .modal-content button {
+        background: #268AC7;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin: 10px 5px 0;
+        width: 40%;
+    }
+
+    .modal-content button:hover {
+        background: #1e6c99;
+    }
+
+    /* Support Text */
+    .support-text {
+        font-size: 12px;
+        color: #666;
+        margin-top: 10px;
+    }
+
+    .support-text span {
+        font-weight: bold;
+        color: #1E3A5F;
+    }
+
+    /* Fade-in Animation */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    
+/* MOBILE VIEW */
+@media only screen and (max-width: 700px) {
+    div.container {
+        display: flex;
+        height: auto; 
+        width: 100%; 
+        margin: 0;
+        padding: 0;  
+    }
+    /*sub_container */
+    div.sub_container {
+        display: block;
+        margin:0;
+        width: 100%; /*calc(100% - 250px)*/;
+    }
+    div.overall_grid {
+        display: grid;
+        grid-template-columns: auto;
+        row-gap: 10px;
+        width: 100%;
+        margin: auto;
+    }
+    div.overall_grid h1{
+        font-family: 'Ubuntu', sans-serif;
+        width: 90%;
+        margin: 13px auto 12px auto;
+        color: #0E2E45;
+        font-size: 35px;
+        font-weight: 300;
+    }
+    
+    }
+    
+    
+    /*TABLET VIEW*/
+    @media only screen and (min-width: 700px) and (max-width: 850px) {
+    
+        div.container {
+            display: flex;
+            height: auto;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        div.sub_container {
+            display: block;
+            margin:0;
+            width: 100%;
+        }
+    
+        /*sub_container */
+        div.overall_grid {
+            display: grid;
+            grid-template-columns: auto;
+            width: 90%;
+            margin: auto;
+        }
+        div.overall_grid h1{
+            font-family: 'Ubuntu', sans-serif;
+             width: 90%;
+             margin: 13px auto 12px auto;
+             color: #0E2E45;
+             font-size: 35px;
+             font-weight: 300;
+        }
+    
+    }
+        
+    /*DESKTOP VIEW*/
+    @media only screen and (min-width: 850px) {
+        div.container {
+            display: flex;
+            height: auto;
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        div.sub_container {
+            display: block;
+            margin:0 0 0 250px;
+            width: calc(100% - 250px);
+        }
+        /*sub_container */
+        
+        div.overall_grid {
+            display: grid;
+            grid-template-columns: auto;
+            margin: 0 auto 0 auto;
+            width: 95%;
+        }
+        div.overall_grid h1{
+            font-family: 'Ubuntu', sans-serif;
+            width: 90%;
+            text-align: left;
+            margin: 13px auto 12px auto;
+            color: #0E2E45;
+            font-size: 35px;
+            font-weight: 300;
+        }
+    }
+     

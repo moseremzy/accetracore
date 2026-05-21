@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <link rel="stylesheet" href="/css/customer_support.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="/js/interactive.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="https://kit.fontawesome.com/0855e51304.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assets/img/favicon.png" type="image/x-icon" />
+    <title>Customer Support</title>
+     <%- settings.LIVECHAT %>
+</head>
+<body>
+  <div class="container">
+
+  <!--side bar--> <%- include('../partials/sidebar') %>
+
+     <div class="sub_container">
+
+      <!--header--> <%- include('../partials/header') %>
+
+       <div class = "overall_grid">
+
+         <h1>Customer Support</h1>
+
+         <div class="customer_support_container">
+          <div class="main_details">
+            <h2>Contact Customer Support</h2>
+            <p class="subheading">We're here to help. Fill out the form below and a representative will get back to you shortly.</p>
+            <form action="/update_profile" method="post">
+              <div class="field">
+                <label for="fullname">Full Name</label>
+                <input id="fullname" type="text" name="fullname" required>
+              </div>
+        
+              <div class="field">
+                <label for="email">Email Address</label>
+                <input id="email" type="email" name="email" required>
+              </div>
+        
+              <div class="field">
+                <label for="subject">Subject</label>
+                <input id="subject" type="text" name="address" required>
+              </div>
+        
+              <div class="field">
+                <label for="complaint">Message</label>
+                <textarea id="complaint" name="complaint" rows="6" required></textarea>
+              </div>
+        
+              <button id="complaint_btn" type="submit">
+                <i class="fa-solid fa-spinner fa-spin" style="display: none;"></i>
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+
+       </div>
+
+       <!--footer--> <%- include('../partials/footer') %>
+
+     </div>
+
+    </div>
+    <div id="google_translate_element" style="display:none"></div>
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: "en"}, 'google_translate_element');
+    }
+    
+    function changeLanguageByButtonClick() {
+      var language = document.getElementById("language").value;
+      var selectField = document.querySelector("#google_translate_element select");
+      for(var i=0; i < selectField.children.length; i++){
+        var option = selectField.children[i];
+        // find desired langauge and change the former language of the hidden selection--field 
+        if(option.value==language){
+           selectField.selectedIndex = i;
+           // trigger change event afterwards to make google-lib translate this side
+           selectField.dispatchEvent(new Event('change'));
+           break;
+        }
+      }
+    }
+    </script>
+    <script src="/js/helper.js"></script>
+</body>
+</html>

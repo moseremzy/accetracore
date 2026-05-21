@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html style="height: 100%; margin: 0; padding: 0; background-color: #f5f6fa;">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Email Confirmation</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f6fa;
+      color: #2e2e2e;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px 20px;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+   .header {
+      background-color: #003366;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .body {
+      padding: 30px;
+    }
+
+    .body h2 {
+      font-size: 18px;
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    .body p {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    a.verify-link {
+      display: inline-block;
+      margin: 20px 0;
+      font-size: 15px;
+      color: #ffffff;
+      background-color: #1d3557;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+
+    a.verify-link:hover {
+      background-color: #16324f;
+    }
+
+    .raw-link {
+      word-break: break-all;
+      font-size: 14px;
+      color: #1d3557;
+      text-decoration: none;
+    }
+
+    .footer {
+      background-color: #f0f2f5;
+      padding: 20px;
+      font-size: 13px;
+      color: #777;
+      text-align: center;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+ 
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="header">
+      <h1>{{bankName}}</h1>
+    </div>
+
+   <div class="body">
+    
+    <h2>Email Confirmation</h2>
+
+    <p>Dear {{firstname}},</p>
+
+    <p>Hello <strong style="text-transform: capitalize;">{{firstname}}</strong>,</p>
+
+    <p>Thank you for registering with <strong>{{bankName.toUpperCase()}}</strong>.</p>
+
+    <p>To complete your registration and activate your account, please click the button below:</p>
+
+    <p style="text-align: center;">
+      <a href="https://{{bankName}}.com/email-confirmation/{{confirmationCode}}" class="verify-link">Verify Email</a>
+    </p>
+
+    <p>If the button above doesn't work, please copy and paste the following link into your browser:</p>
+    <p><a class="raw-link" href="https://{{bankName}}.com/email-confirmation/{{confirmationCode}}">https://{{bankName}}.com/email-confirmation/{{confirmationCode}}</a></p>
+
+    <div class="footer">
+      This is an automated message from {{bankName}}. Please do not reply to this email.<br>
+      Need help? Contact us at <a href="mailto:{{supportEmail}}">{{supportEmail}}</a>
+    </div>
+
+  </div>
+  
+
+  </div>
+</body>
+</html>

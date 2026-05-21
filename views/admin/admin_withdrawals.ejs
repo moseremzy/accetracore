@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="/css/admin/dashboard.css">
+        <!-- <script src="/home/js/interactive.js"></script> -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <script src="https://kit.fontawesome.com/0855e51304.js" crossorigin="anonymous"></script>
+        <link rel="shortcut icon" type="image/png" href="/home/faicon.png">
+        <title>Withdrawals</title>
+    </head>
+<body>
+
+    <!--overlay--> <%- include('../partials/overlay') %>
+
+   <div class="container">
+
+    <!--side bar--> <%- include('../partials/admin_sidebar') %>
+    
+    <div class="sub_container">
+    
+    <!--header--> <%- include('../partials/admin_header') %>
+    
+    <div class = "overall_grid">
+            
+    <h1>Transactions</h1>
+
+    <div class="transactions-container">
+      <div class="table-responsive">
+        <table class="transactions-table">
+          <thead>
+            <tr>
+              <th>Withdrawal ID</th>
+              <th>User ID</th>
+              <th>User's Name</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+        
+          <tbody>
+          <% withdrawals.forEach( (withdrawal) => { %>
+            <tr>
+              <td><%= withdrawal.withdrawal_id %></td>
+              <td><%= withdrawal.user_id %></td>
+              <td><%= withdrawal.user_name %></td>
+              <td><%= new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(withdrawal.amount) %></td>
+              <td><span class="status <%= withdrawal.status %>"><%= withdrawal.status %></span></td>
+              <td><%= withdrawal.date_created %></td>
+              <td class="actions">
+                <% if (withdrawal.status == "Pending") { %> <!--ONLY DISPLAY IF DEM NEVA APPROVE AM -->
+                <button class="approve-btn" onclick="approve_decline_withdrawal(<%= withdrawal.withdrawal_id %>, <%= withdrawal.amount %>, 'APPROVE')">Approve</button>
+                <button class="reject-btn" onclick="approve_decline_withdrawal(<%= withdrawal.withdrawal_id %>, <%= withdrawal.amount %>, 'REJECT')">Reject</button>
+                <% } %>
+               
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+ </div>
+</div>
+</div>
+
+  <style>
+    .transactions-container h2 {
+      margin-top: 0;
+      color: #c76515;
+      text-align: center;
+    }
+
+    /* Responsive Table Wrapper */
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    .transactions-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .transactions-table th, .transactions-table td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    .transactions-table th {
+      background-color: #c76515;
+      color: #fff;
+    }
+
+    .transactions-table tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .transactions-table tbody tr:hover {
+      background-color: #eaeaea;
+    }
+
+    .status {
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .status.Pending {
+      background-color: #ff9800;
+      color: #fff;
+    }
+
+    .status.Rejected {
+      background-color: red;
+      color: #fff;
+    }
+
+    .status.Approved {
+      background-color: #4CAF50;
+      color: #fff;
+    }
+
+    .actions {
+      display: flex;
+      gap: 5px;
+    }
+
+    .approve-btn, .reject-btn {
+      padding: 6px 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9em;
+      color: white;
+    }
+
+    .approve-btn {
+      background-color: #4CAF50;
+    }
+
+    .reject-btn {
+      background-color: red;
+    }
+
+    /* Mobile Adjustments */
+    @media (max-width: 768px) {
+      .container {
+        width: 95%;
+      }
+      .transactions-table th, .transactions-table td {
+        padding: 8px;
+        font-size: 12px;
+      }
+      .actions {
+        flex-direction: column;
+        gap: 3px;
+      }
+    }
+  </style>
+<!-- jQuery(necessary for all JavaScript plugins) -->
+<script src="/js/vendor/jquery.min.js"></script>
+<script src="/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <link rel="stylesheet" href="/admin/dashboard.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- <script src="/home/js/interactive.js"></script> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="https://kit.fontawesome.com/0855e51304.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" type="image/png" href="/home/faicon.png">
+    <title>My Office</title>
+</head>
+<body>
+
+  <!--overlay--> <%- include('../partials/overlay') %>
+
+  <div class="container">
+
+  <!--side bar--> <%- include('../partials/admin_sidebar') %>
+
+     <div class="sub_container">
+
+      <!--header--> <%- include('../partials/admin_header') %>
+
+
+       <div class = "overall_grid">
+        
+        <h1>Dashboard</h1>
+
+        <div class="dashboard">
+          <a href="/account/users" class="card">
+              <h3>Users</h3>
+              <p><span id="userCount"><%= users.length %></span></p>
+          </a>
+
+          <a href="/account/user_transactions" class="card">
+              <h3>Transactions</h3>
+              <p><span id="transactionCount"><%= transactions.length %></span></p>
+          </a>
+       
+      </div>
+      
+       </div>
+
+     </div>
+
+    </div>
+  <!-- jQuery(necessary for all JavaScript plugins) -->
+<script src="/assets/vendors/jquery/jquery.min.js"></script>
+<script src="/js/admin.js"></script>
+</body>
+</html>

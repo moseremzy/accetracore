@@ -1,0 +1,30 @@
+<div class="overlay" style="display: none;">
+    <div class="overlay_content">
+        Processing <i class="fa-solid fa-circle-notch fa-spin"></i>
+    </div>
+</div>
+
+<style>
+    .overlay {
+        width: 100%; 
+        height: 100vh;
+        background-color: black; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 3; 
+        opacity: 0.8; 
+        display: flex;
+        justify-content: center;  /* Centers horizontally */
+        align-items: center;      /* Centers vertically */
+    }
+
+    .overlay_content {
+        font-size: 27px;
+        color: #007BFF;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 10px; /* Adds spacing between text and icon */
+    }
+</style>

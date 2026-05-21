@@ -1,0 +1,328 @@
+<div class="main-content">
+      <div class="balance-card">
+        <div class="balance-header">
+          <div class="greeting-box">
+            <img src="/<%= user.profile_photo %>" alt="User Photo" class="user-pic">
+            <div>
+              <p class="greeting">Welcome Back<br><strong><%= user.firstname %></strong></p>
+            </div>
+          </div>
+          <div class="date-time">
+            <p id="live_time">06:35:09</p>
+            <span id="section2_date" class="notranslate"></span>
+          </div>
+        </div>
+        
+        <p class="available">Available Balance</p>
+        <h2 id = "available-balance">
+          <%
+          const formatted_balance = new Intl.NumberFormat("en", {
+            style: "currency",
+            currency: user.currencyCode
+          }).format(user.balance);
+         %>
+
+        <%= formatted_balance %>
+        <%= user.currencyCode %>
+        </h2>
+        
+        <div class="balance-footer">
+          <div class="account-info">
+            <p>Your Account Number</p>
+            <strong><%= user.account_number %></strong>
+            <% if (user.account_status === 'Active') { %>
+              <span class="status">🟢 <%= user.account_status %></span>
+            <% } else { %>
+              <span class="status">🔴 <%= user.account_status %></span>
+            <% } %>            
+          </div>
+          
+          <div class="buttons">
+            <a href="/account/transactions" class="btn btn-outline" style="text-decoration: none;">
+              <i class="fas fa-receipt"></i> Transactions
+            </a>            
+            <button class="btn btn-primary">
+              <i class="fas fa-arrow-up-right-dots"></i> Top up
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+  <style type="text/css">
+
+  .main-content {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    height: 300px;
+  }
+  
+  .balance-card {
+    flex: 2;
+    background: linear-gradient(to right, #0f6fc1, #1f4388);
+    border-radius: 15px;
+    color: white;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .balance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .greeting-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .greeting {
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.4;
+  }
+  
+  .user-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+  }
+  
+  .date-time {
+    text-align: right;
+    font-size: 14px;
+  }
+  
+  .date-time p {
+    margin: 4px 0;
+    font-weight: bold;
+  }
+  
+  .available {
+    margin: 2px 0;
+    font-size: 13px;
+  }
+  
+  h2#available-balance {
+    margin: 2px 0;
+  }
+  
+  .balance-footer {
+    margin-top: 20px;
+    padding: 10px 12px;
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .account-info p {
+    margin: 3px 0;
+    font-size: 13px;
+  }
+  
+  .account-info .status {
+    display: inline-block;
+    background: #d4edda;
+    color: #155724;
+    border-radius: 12px;
+    padding: 2px 8px;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  .buttons {
+    display: flex;
+    margin-left: auto;
+  }
+  
+  .buttons .btn {
+    padding: 4px 15px;
+    border: none;
+    border-radius: 8px;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+  }
+  
+  .btn-outline {
+    background: white;
+    color: #0276d8;
+    border: 1px solid #0276d8;
+  }
+  
+  .btn-primary {
+    background: #0276d8;
+    color: white;
+  }
+  
+  .balance-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .balance-header .greeting {
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  .balance-header h2 {
+    margin-top: 10px;
+    font-size: 30px;
+  }
+  
+  .date-time {
+    text-align: right;
+    font-size: 14px;
+  }
+  
+  .balance-footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .account-info p {
+    margin: 0;
+    font-size: 12px;
+  }
+  
+  .account-info .status {
+    display: inline-block;
+    background: #d4edda;
+    color: #155724;
+    border-radius: 12px;
+    padding: 2px 8px;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  .buttons .btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .btn-outline {
+    background: white;
+    color: #0276d8;
+    border: 1px solid #0276d8;
+  }
+  
+  .btn-primary {
+    background: #0276d8;
+    color: white;
+  }
+  
+  .account-stats {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  
+  .account-stats h3 {
+    margin-bottom: 15px;
+  }
+  
+  .account-stats ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .account-stats li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+  
+  .account-stats .icon {
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 10px;
+    color: white;
+  }
+  
+  .icon.blue { background: #00aaff; }
+  .icon.yellow { background: #ffeb3b; color: #333; }
+  .icon.green { background: #4caf50; }
+  .icon.purple { background: #9c27b0; }
+  
+  .actions-section {
+    text-align: center;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+  
+  .actions-section h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .actions-section p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .action-card {
+    width: 60px;
+    height: 60px;
+    background: #f1f1f1;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .action-card.active {
+    background: #0276d8;
+    color: white;
+  }
+  
+  .action-card.green {
+    background: #4caf50;
+    color: white;
+  }
+  
+  .action-card.purple {
+    background: #9c27b0;
+    color: white;
+  }
+  </style>
+   

@@ -1,0 +1,77 @@
+ <div class="transfer-container">
+    <h3>Quick Transfer</h3>
+  
+    <div class="transfer-type">
+      <div class="transfer">
+        <span class="icon blue"><i class="fas fa-university"></i></span>
+        <a href = "/account/transfer_funds?transfer_type=Local Transfer">Local Transfer</a>
+      </div>
+  
+      <div class="transfer">
+        <span class="icon green"><i class="fas fa-paper-plane"></i></span>
+        <a href="/account/transfer_funds?transfer_type=International Wire">Wire Transfer</a>
+      </div>
+    </div>
+  </div>
+  
+  <style>
+    .transfer-container {
+      border: 1px solid #ccc;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: #2c3e50;
+    }
+  
+    .transfer-container h3 {
+      font-weight: 600;
+      font-size: 17px;
+      margin: 0;
+      border-bottom: 1px solid #eee;
+      padding: 11px 15px;
+    }
+  
+    .transfer-type {
+      width: 92%;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+  
+    .transfer {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+  
+    .transfer a {
+      color: #444;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .transfer a:hover {
+      color: #1a73e8;
+    }
+  
+    .transfer-container .icon {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 16px;
+    }
+  
+    .icon.blue {
+      background-color: #1a73e8;
+    }
+  
+    .icon.green {
+      background-color: #34a853;
+    }
+  
+  </style>

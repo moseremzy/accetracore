@@ -1,0 +1,130 @@
+ <div class="account-container">
+  
+    <h3>Account Statistics</h3>
+   
+    <div class = "account-stat">
+        
+       <div class = "stat">
+        <span class="icon blue"><i class="fas fa-credit-card"></i></span>
+        <div>
+          <p>Transaction Limit</p>
+          <h2> 
+          <%
+            const formatted_transaction_limit = new Intl.NumberFormat("en", {
+              style: "currency",
+              currency: user.currencyCode
+            }).format(user.transaction_limit);
+          %>
+  
+          <%= formatted_transaction_limit %>
+        </h2>
+        </div>
+       </div>
+       
+       <div class = "stat">
+       <span class="icon yellow"><i class="fas fa-hourglass-half"></i></span>
+       <div>
+       <p>Pending Transactions</p>
+       <h2>
+        <%
+        const formatted_pending_transactions = new Intl.NumberFormat("en", {
+          style: "currency",
+          currency: user.currencyCode
+        }).format(user.pending_transactions);
+        %>
+
+        <%= formatted_pending_transactions %>
+        </h2>
+       </div>
+       </div>
+       
+       <div class = "stat">
+       <span class="icon green"><i class="fas fa-chart-line"></i></span>
+       <div>
+       <p>Transaction Volume</p>
+       <h2>
+        <%
+        const formatted_transaction_volume = new Intl.NumberFormat("en", {
+          style: "currency",
+          currency: user.currencyCode
+        }).format(user.transaction_volume);
+        %>
+
+      <%= formatted_transaction_volume %>
+       </h2>
+       </div>
+       </div>
+       
+       
+     </div>
+       
+  </div>
+  
+  <style>
+    .account-container {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: #2c3e50;
+    }
+  
+    .account-container h3 {
+      font-weight: 600;
+      font-size: 17px;
+      margin: 0;
+      border-bottom: 2px solid #ddd;
+      padding: 11px 15px;
+    }
+    
+    .account-stat {
+      width: 92%;
+      margin: 0 auto;
+      padding: 20px;
+    }
+  
+    .stat {
+      display: flex;
+      gap: 7px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .stat div p {
+      font-size: 15px;
+      margin: 3px 0;
+    }
+    
+    .stat div h2 {
+      margin: 3px 0;
+      font-size: 17px;
+    }
+  
+    .account-container .icon {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 11px;
+      margin-right: 12px;
+      border-radius: 100%;
+      color: #fff;
+      font-size: 16px;
+    }
+  
+    .icon.blue {
+      background-color: #1a73e8;
+    }
+  
+    .icon.yellow {
+      background-color: #fbbc04;
+    }
+  
+    .icon.green {
+      background-color: #34a853;
+    }
+  
+    .icon.purple {
+      background-color: #8e44ad;
+    }
+  
+  </style>

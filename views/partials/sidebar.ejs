@@ -1,0 +1,242 @@
+<div class="side_bar">
+
+    <div class="logo"><%= settings.WEBSITE.toUpperCase() %></div>
+  
+    <div class="user-profile">
+      <img src="/<%= user.profile_photo %>" alt="User Profile" class="profile-pic">
+      <div class="user-info">
+        <strong><%= user.firstname %> <%= user.lastname %></strong>
+        <p>ID: 066<%= user.user_id %></p>
+        <% if (user.account_status === 'Active') { %>
+          <span class="kyc-badge" style="color: green;">
+            <i class="fas fa-check-circle"></i> <%= user.account_status %>
+          </span>
+        <% } else { %>
+          <span class="kyc-badge" style="color: red;">
+            <i class="fas fa-times-circle"></i> <%= user.account_status %>
+          </span>
+        <% } %>
+      </div>
+      <div class="profile-buttons">
+        <a href = "/account/profile" class="profile-btn"><i class="fas fa-user"></i> Profile</a>
+        <a href = "/logout" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </div>
+  
+    <div class="menu-section">
+      <p class="menu-title">Main Menu</p>
+      <ul class="menu-list">
+        <li><a href="/account/dashboard"><i class="fas fa-home icon"></i> Dashboard</a></li>
+        <li><a href="/account/transactions"><i class="fas fa-money-check-alt icon"></i> Transactions</a></li>
+        <li><a href="/account/virtual_card"><i class="fas fa-credit-card icon"></i> Cards</a></li>
+        <li><a href="/account/profile"><i class="fas fa-user icon"></i> Profile</a></li>
+      </ul>
+  
+      <p class="menu-title">Transfers</p>
+      <ul class="menu-list">
+        <li><a href="/account/transfer_funds?transfer_type=Local Transfer"><i class="fas fa-exchange-alt icon"></i> Local Transfer</a></li>
+        <li><a href="/account/transfer_funds?transfer_type=International Wire"><i class="fas fa-globe icon"></i> International Wire</a></li>
+      </ul>
+  
+      <p class="menu-title">Services</p>
+      <ul class="menu-list">
+        <li><a href="/account/loan_mortages"><i class="fas fa-file-contract icon"></i> Loan & Mortgages</a></li>
+        <li><a href="/account/customer_support"><i class="fas fa-headset icon"></i> Customer Support</a></li>
+      </ul>
+    </div>
+  
+    <div class="footer-info">
+      <p>Secure Banking</p>
+      <p class="version">v1.2.0</p>
+    </div>
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let currentPath = window.location.pathname;
+        document.querySelectorAll(".menu-list li a").forEach(link => {
+          if (link.getAttribute("href") === currentPath) {
+            link.parentElement.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </div>
+  
+  <style>
+  .side_bar {
+    width: 250px;
+    height: 100vh;
+    background-color: #ffffff;
+    border-right: 1px solid #e0e0e0;
+    padding: 20px;
+    overflow-x: auto;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .logo {
+    font-family: 'Georgia', serif;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    color: #003366;
+    margin-bottom: 30px;
+  }
+  
+  .user-profile {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .profile-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .user-info p {
+    margin: 4px 0;
+    font-size: 13px;
+    color: #666;
+  }
+  
+  .kyc-badge {
+    display: inline-block;
+    background-color: #e6f9ec;
+    color: #2b8f42;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    margin-top: 5px;
+  }
+  
+  .profile-buttons {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .profile-btn,
+  .logout-btn {
+    padding: 6px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid transparent;
+  }
+  
+  .profile-btn {
+    background-color: #ffffff;
+    color: #333;
+    border: 1px solid #ccc;
+  }
+  
+  .profile-btn:hover {
+    background-color: #f5f5f5;
+    border-color: #999;
+  }
+  
+  .logout-btn {
+    background-color: #2196F3;
+    color: #fff;
+  }
+  
+  .logout-btn:hover {
+    background-color: #1976D2;
+  }
+  
+  .menu-title {
+    font-size: 12px;
+    font-weight: bold;
+    color: #888;
+    margin: 20px 0 10px;
+    text-transform: uppercase;
+  }
+  
+  .menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu-list li {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    transition: background 0.3s ease, color 0.3s ease;
+    padding: 5px 12px;
+    margin: 5px 0;
+  }
+  
+  .menu-list li a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .menu-list li .icon {
+    margin-right: 10px;
+    padding: 10px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .menu-list li.active,
+  .menu-list li:hover {
+    background-color: #2196F3;
+    color: white;
+  }
+  
+  .menu-list li.active a,
+  .menu-list li:hover a {
+    color: white;
+  }
+  
+  .menu-list li.active {
+    border-left: 4px solid #1565C0;
+    padding-left: 8px;
+  }
+  
+  .footer-info {
+    margin-top: auto;
+    font-size: 12px;
+    color: #aaa;
+    text-align: center;
+  }
+  
+  .version {
+    font-weight: bold;
+  }
+  
+  /* Responsive */
+  @media (max-width: 700px),
+         (min-width: 700px) and (max-width: 850px) {
+    .side_bar {
+      display: none;
+    }
+  }
+  
+  @media (min-width: 850px) {
+    .side_bar {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+    }
+  }
+  </style>
+  

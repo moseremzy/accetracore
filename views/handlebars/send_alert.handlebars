@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Credit Notification - {{bankName.toUpperCase()}} Bank</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      color: #333333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      border-radius: 4px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      border: 1px solid #e0e0e0;
+    }
+
+    .header {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 25px 20px;
+      border-bottom: 1px solid #002244;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+    }
+
+    .body {
+      padding: 30px;
+    }
+
+    .greeting {
+      margin-bottom: 25px;
+    }
+
+    .greeting p {
+      line-height: 20px;
+      margin: 0 0 10px 0;
+    }
+
+    .transaction-details {
+      background-color: #f8f9fa;
+      border-radius: 4px;
+      padding: 20px 17px;
+      margin-bottom: 25px;
+      border-left: 4px solid #003366;
+    }
+
+    .transaction-details h3 {
+      margin-top: 0;
+      color: #003366;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .detail-row {
+      display: flex;
+      margin-bottom: 12px;
+      word-break: break-word;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .detail-label {
+      width: 120px;
+      min-width: 120px;
+      color: #666666;
+      font-weight: 500;
+    }
+
+    .detail-value {
+      flex: 1;
+      font-weight: 500;
+      color: #003366;
+      text-align: left;
+      padding-left: 15px;
+      margin-left: 0;
+      word-break: break-word;
+    }
+
+    .amount-highlight {
+      font-size: 15px;
+      color: #2e7d32;
+      font-weight: 600;
+    }
+
+    .footer-note {
+      font-size: 14px;
+      color: #666666;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .footer-note p {
+      margin: 5px 0;
+    }
+
+    .action-button {
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    .action-button a {
+      display: inline-block;
+      background-color: #003366;
+      color: white;
+      text-decoration: none;
+      padding: 12px 30px;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+
+    .action-button a:hover {
+      background-color: #002244;
+    }
+
+    .disclaimer {
+      font-size: 12px;
+      color: #999999;
+      line-height: 1.5;
+      margin-top: 30px;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: #999999;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .container {
+        margin: 10px;
+      }
+      
+      .body {
+        padding: 20px;
+      }
+      
+      .detail-row {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      
+      .detail-label {
+        width: 100px;
+        min-width: 100px;
+        margin-bottom: 0;
+      }
+      
+      .detail-value {
+        padding-left: 15px;
+        text-align: left;
+        flex: 1;
+        min-width: calc(100% - 115px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>{{bankName.toUpperCase()}} BANK</h1>
+    </div>
+
+    <div class="body">
+      <div class="greeting">
+        <p>Dear <strong>{{receiver_name}}</strong>,</p>
+        <p>We are pleased to inform you that your {{bankName.toUpperCase()}} account has been credited.</p>
+      </div>
+
+      <div class="transaction-details">
+        <h3>Transaction Details</h3>
+
+        <div class="detail-row">
+          <div class="detail-label">Reference:</div>
+          <div class="detail-value">{{reference}}</div>
+        </div>
+        
+        <div class="detail-row">
+          <div class="detail-label">Sender:</div>
+          <div class="detail-value">{{sender}}</div>
+        </div>
+        
+        <div class="detail-row">
+          <div class="detail-label">Date</div>
+          <div class="detail-value">{{date}}</div>
+        </div>
+        
+        <div class="detail-row">
+          <div class="detail-label">Beneficiary:</div>
+          <div class="detail-value">{{receiver_name}}</div>
+        </div>
+        
+        <div class="detail-row">
+          <div class="detail-label">Amount:</div>
+          <div class="detail-value">{{amount}}</div>
+        </div>
+
+        <div class="detail-row" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
+          <div class="detail-label">Available Balance:</div>
+          <div class="detail-value">{{available_balance}}</div>
+        </div>
+      </div>
+
+      <div class="action-button">
+        <a href="https://{{bankName}}.com/account/dashboard" target="_blank">View Account</a>
+      </div>
+
+      <div class="footer-note">
+        <p>If you did not initiate this transaction, please contact our customer service immediately.</p>
+        <p>For assistance, email us at <a href="mailto:support@{{bankName}}.com" style="color: #003366;">support@{{bankName}}.com</a></p>
+      </div>
+
+      <div class="disclaimer">
+        <p>This is an automated message. Please do not reply to this email. For your security, never share your account details or passwords with anyone.</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>&copy; {{year}} {{bankName.toUpperCase()}} Bank. All rights reserved.</p>
+      <p>{{bankName.toUpperCase()}} Bank</p>
+    </div>
+  </div>
+</body>
+</html>

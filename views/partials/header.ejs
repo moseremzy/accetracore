@@ -1,0 +1,214 @@
+<header class="header">
+    <div class="hamburger_account">
+        <i class="fa-solid fa-bars open_hamburger"></i> 
+        <i class="fa-solid fa-xmark close_hamburger"></i> 
+        <p id = "header_date" class="notranslate"><i class="fas fa-calendar"></i></p>
+    </div>
+
+    <div class="section_header">
+        <div class="header-right">
+          <div class="wallet">
+            <i class="fas fa-wallet"></i>
+            <span>
+              <%
+                const formatted_balance = new Intl.NumberFormat("en", {
+                  style: "currency",
+                  currency: user.currencyCode
+                }).format(user.balance);
+              %>
+      
+              <%= formatted_balance %>
+            </span>
+          </div>
+          <div class="notification">
+            <i class="fas fa-bell"></i>
+            <span class="badge">0</span>
+          </div>
+          <img src="/<%= user.profile_photo %>" alt="Profile" class="header-profile-pic">
+        </div>
+      </div>
+      
+</header>
+
+
+<style>
+
+/* Header Styling */
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgb(233, 230, 230);
+    background-color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+.hamburger_account {
+    display: flex;
+    align-items: center;
+}
+
+.hamburger_account i {
+    font-size: 22px;
+    margin-right: 9px;
+    color: gray;
+    cursor: pointer;
+}
+
+p#header_date {
+    font-size: 15px;
+}
+
+p#header_date i {
+    font-size: 13px; 
+    display: inline-block; 
+    color: gray;
+    margin-right: 5px;
+}
+
+.section_header {
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.notification {
+  position: relative;
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+}
+
+.notification .badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background-color: red;
+  color: white;
+  font-size: 10px;
+  padding: 2px 5px;
+  border-radius: 10px;
+}
+
+.wallet {
+  display: flex;
+  align-items: center;
+  background-color: #2196F3;
+  border-radius: 15px;
+  padding: 5px 13px;
+  font-size: 14px;
+  color: #fff; /* make text white for contrast */
+}
+
+.wallet i {
+  margin-right: 6px;
+  color: #fff; /* match icon to text */
+  font-size: 16px;
+}
+
+.header-profile-pic {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid #2196F3;
+}
+
+ 
+.pop_up_box {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: white;
+    color: gray;
+    padding: 10px;
+    width: 120px;
+    text-align: left;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.pop_up_box a {
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+.pop_up_box a:hover {
+    color: #1f2937;
+    font-weight: 500;
+}
+
+/* Mobile View */
+@media only screen and (max-width: 700px) {
+    .header {
+        padding: 15px;
+    }
+    .hamburger_account h1 {
+        font-size: 16px;
+    }
+    #profile_pix {
+        width: 30px;
+        height: 30px;
+    }    
+    div.hamburger_account i.close_hamburger{
+        display: none;
+        font-size: 22px;
+        margin-right: 10px;
+        color: gray;
+    }
+    div.hamburger_account i.open_hamburger{
+        display: inline-block;
+        font-size: 22px;
+        margin-right: 10px;
+        color: gray;
+    }
+    p#header_date {
+        display: none;
+    }
+
+}
+
+
+/*TABLET VIEW*/
+@media only screen and (min-width: 700px) and (max-width: 850px) {
+    div.hamburger_account i.close_hamburger{
+        display: none;
+        font-size: 22px;
+        margin-right: 10px;
+        color: gray;
+    }
+    div.hamburger_account i.open_hamburger{
+        display: inline-block;
+        font-size: 22px;
+        margin-right: 10px;
+        color: gray;
+    }
+    p#header_date {
+        display: none;
+    }
+}
+
+
+/*DESKTOP VIEW*/
+@media only screen and (min-width: 850px) {
+    div.hamburger_account i{
+        display: none;
+        font-size: 22px;
+        margin-right: 10px;
+        color: gray;
+    }
+}
+</style>

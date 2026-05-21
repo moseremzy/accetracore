@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from banking.epitomeexchange.com/login.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Dec 2022 21:21:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign In</title>
+    <link rel="icon" href="assets/img/favicon.png" type="image/x-icon" />
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="assetsAuth/fonts/material-icon/css/material-design-iconic-font.min.html">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="assetsAuth/css/style.css">
+   
+    <script src = "/assets/js/interactive.js"></script>
+    <style> 
+		#goog-gt-tt, .goog-te-balloon-frame{display: none !important;} 
+        .goog-text-highlight { background: none !important; box-shadow: none !important;}
+		body{ top: 0 !important;}
+        .goog-te-banner-frame{display: none !important;}
+		.goog-logo-link{display: none !important;}
+        .goog-te-gadget{height: 28px !important;  overflow: hidden;}
+		iframe.VIpgJd-ZVi9od-ORHb-OEVmcd{display: none !important;}
+	 </style>   <!-- NA DIS CODE DEY REMOVE THOSE DIRTY FROM GOOGLE TRANSLATOR VERY IMPORTANT. NO NEED FOR JS AGAIN-->
+	 <script src="//code.jivosite.com/widget/hM4HUm4unE" async></script>
+
+</head>
+<body>
+
+    <div class="main">
+        <div id="google_translate_element" style="display: block; width: 10%; margin: 0px auto 10px auto;"></div>
+        <section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                    <form id="signup-form" class="signup-form" action="/login" method="post">
+                        <h2 class="form-title">Login Account</h2>
+                            
+                        <% if (typeof message != 'undefined') { %>
+                            <p id="err" style="color:red; font-weight: bold; text-align: center; margin: 0px 0px 20px 0px;"><%= message %></p>
+                            <% } %>
+
+                        <script type="text/javascript">
+                            function googleTranslateElementInit() {
+                              new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                            }
+                            </script>
+                            
+                            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+               
+                        <div class="form-group">
+                            <input type="email" class="form-input" placeholder="Email"  name="email" value="" autofocus required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-input" placeholder="Password" name="password" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="login" class="form-submit" value="Login"/>
+                        </div>
+                    </form>
+                      <p class="loginhere">
+                        Don't Have an account ? <a href="/register" class="loginhere-link">Register here</a><br>
+                        Forgot Password ? <a href="/forgot_password" class="loginhere-link">Reset here</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="assetsAuth/vendor/jquery/jquery.min.html"></script>
+    <script src="assetsAuth/js/main.html"></script>
+    <script src = "/assets/js/interactive.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+<!-- Mirrored from banking.epitomeexchange.com/login.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Dec 2022 21:21:02 GMT -->
+</html>

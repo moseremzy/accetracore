@@ -1,0 +1,55 @@
+<% if (user.account_mode != 'none') { %>
+<div class="dashboard-notice">
+    <div class="notice-icon">
+      <i class="fas fa-bell"></i>
+    </div>
+    <div class="notice-content">
+     <% if (user.account_mode == 'Upgrade') { %>
+      <strong>Notice:</strong> <%= user.account_mode %> – You Are Required to Upgrade Your Account. Contact Customer Support for More Information.
+     <% } else if (user.account_mode == 'Maintenance') { %>
+      <strong>Notice:</strong> <%= user.account_mode %> - We Are Carrying Out Maintenance on This Account, Contact Customer Support for More Information.
+     <% } else { %>
+      <strong>Notice:</strong> <%= user.account_mode %> - Contact Customer Support for More Information Regarding This.
+     <% } %>
+    </div>
+</div>
+<% } %>
+
+<style> 
+.dashboard-notice {
+    display: flex;
+    align-items: center;
+    background: #fef9e7;
+    color: #856404;
+    border-left: 5px solid #ffc107;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1000px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    position: relative;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .notice-icon {
+    font-size: 20px;
+    margin-right: 15px;
+    color: #ffc107;
+  }
+  
+  .notice-content {
+    flex: 1;
+    font-size: 15px;
+  }
+  
+  .notice-dismiss {
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #856404;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 5px;
+  }
+</style>  
+  

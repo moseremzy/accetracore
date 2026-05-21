@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Funds Reversal Notification</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .header {
+      background-color: #003366;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .body {
+      padding: 30px;
+    }
+
+    .body h2 {
+      font-size: 18px;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .body p {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+
+    .info-table td {
+      padding: 8px 0;
+    }
+
+    .info-table td:first-child {
+      color: #666;
+      width: 150px;
+    }
+
+    .footer {
+      background-color: #f0f2f5;
+      padding: 20px;
+      font-size: 13px;
+      color: #777;
+      text-align: center;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #003366;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .note {
+      font-size: 13px;
+      color: #aa0000;
+      background: #fff0f0;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <h1>{{bankName}}</h1>
+    </div>
+
+    <div class="body">
+      <h2>Funds Reversal Notification</h2>
+
+      <p>Dear {{account_name}},</p>
+
+      <p>
+        We wish to inform you that a transaction on your account has been reversed.
+        Please find the details of the reversal below:
+      </p>
+
+      <table class="info-table">
+        <tr>
+          <td>Amount:</td>
+          <td><strong>{{amount}}</strong></td>
+        </tr>
+        <tr>
+          <td>Transaction ID:</td>
+          <td>{{transaction_id}}</td>
+        </tr>
+        <tr>
+          <td>Reversal Date:</td>
+          <td>{{reversalDate}}</td>
+        </tr>
+        <tr>
+          <td>Reason:</td>
+          <td>{{reason}}</td>
+        </tr>
+        <tr>
+          <td>Account Number:</td>
+          <td>{{account_number}}</td>
+        </tr>
+      </table>
+
+      <div class="note">
+        Please note that this reversal reflects on your current account balance.
+      </div>
+
+      <a href="{{accountLink}}" class="btn">View My Account</a>
+
+      <p>
+        If you have any questions or did not initiate this transaction, please contact our support team immediately.
+      </p>
+    </div>
+
+    <div class="footer">
+      Need help? Contact us at <a href="mailto:{{supportEmail}}">{{supportEmail}}</a>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!-- Modal Structure -->
+<div id="reflectionSuccessModal" style="display: none;" class="success_modal">
+    <div class="success_modal-content">
+        <i class="fa-solid fa-circle-check success-icon"></i>
+        <h2>Reflection PIN Confirmed</h2>
+        <p>Your Reflection PIN has been successfully verified. You can now proceed with your transfer.</p>
+        <a href = "" id="continueTransferBtn">Continue with Transfer</a>
+    </div>
+</div>
+
+<!-- CSS Styling -->
+<style>
+    /* Modal Background */
+    .success_modal {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1000;
+    }
+
+    /* success_Modal Content */
+    .success_modal-content {
+        background: white;
+        padding: 25px;
+        text-align: center;
+        border-radius: 12px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        width: 90%;
+        max-width: 400px;
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    /* Success Icon */
+    .success-icon {
+        font-size: 55px;
+        color: #28a745;
+        margin-bottom: 15px;
+    }
+
+    /* success_Modal Header */
+    .success_modal-content h2 {
+        font-size: 22px;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    /* success_Modal Paragraph */
+    .success_modal-content p {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    /* Continue with Transfer a */
+    .success_modal-content a {
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        border: none;
+        display: inline-block;
+        margin: 7px 0;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+        width: 100%;
+    }
+
+    .success_modal-content a:hover {
+        background: #0056b3;
+    }
+
+    /* Fade-in Animation */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+ 

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Password Reset</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .header {
+            background-color: #003366;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 17px;
+        }
+
+        p {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        .reset-link {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 12px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .reset-link:hover {
+            background: #0056b3;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #777;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media only screen and (max-width: 569px) {
+            .container {
+                width: 90%;
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .reset-link {
+                font-size: 13px;
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="header">
+          <h1>{{bankName.toUpperCase()}}</h1>
+        </div>
+
+        <h2>Password Reset Request</h2>
+        <p>Hello <b style="text-transform: capitalize;">{{useremail}},</b></p>
+        <p>We received a request to reset your password. Click the button below to set a new password:</p>
+
+        <a href="https://{{bankName}}.com/new_password/{{reset_pass_id}}" class="reset-link">Reset Password</a>
+
+        <p>If the button above doesn’t work, copy and paste this link into your browser:</p>
+        <p style="word-break: break-word;">
+            <a href="https://{{bankName}}.com/new_password/{{reset_pass_id}}" style="color: #007bff;">
+                https://{{bankName}}.com/new_password/{{reset_pass_id}}
+            </a>
+        </p>
+
+        <p>If you did not request this password reset, please ignore this email.</p>
+        <p class="footer">Copyright &copy; {{bankName.toUpperCase()}} Bank. All Rights Reserved.</p>
+    </div>
+
+</body>
+</html>

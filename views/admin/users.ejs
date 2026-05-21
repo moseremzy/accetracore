@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>   
+    <link rel="stylesheet" href="/admin/dashboard.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- <script src="/home/js/interactive.js"></script> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="https://kit.fontawesome.com/0855e51304.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" type="image/png" href="/home/faicon.png">
+    <title>Users</title>
+</head>
+<body>
+
+  <!--overlay--> <%- include('../partials/overlay') %>
+
+  <div class="container">
+
+  <!--side bar--> <%- include('../partials/admin_sidebar') %>
+
+     <div class="sub_container">
+
+      <!--header--> <%- include('../partials/admin_header') %>
+
+
+       <div class = "overall_grid">
+        
+        <h1>Users</h1>
+         
+            <div class="table-responsive">
+              <table class="users-table">
+                <thead>
+                  <tr>
+                    <th>User ID</th>
+                    <th>Profile</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Example Row -->
+               <% users.forEach( (user) => { %>
+                  <tr>
+                    <td><%= user.user_id %></td>
+                    <td><img src="/<%= user.profile_photo %>" alt="Profile Pic" class="profile-pic"></td>
+                    <td><%= user.firstname %> <%= user.lastname %></td>
+                    <td><%= user.email %></td>
+                    <td class="actions">
+                     <% if (user.user_status === 'Active') { %>
+                      <a href = "/account/edit_user/<%= user.user_id %>" class="view-btn">Edit</a>
+                      <a href = "/account/user_transactions?page=1&user_id=<%= user.user_id %>" class="view-btn">Transactions</a>
+                      <% } %>
+                      <button class="delete-btn" onclick="delete_user(<%= user.user_id %>)">Delete</button>
+                    </td>
+                  </tr>
+                <% }) %>
+                </tbody>
+              </table>
+              <div class="pagination">
+                <% if (totalPages > 1) { %>
+                  <% for (let i = 1; i <= totalPages; i++) { %>
+                    <a href="/account/users?page=<%= i %>" class="<%= i === currentPage ? 'active' : '' %>"><%= i %></a>
+                  <% } %>
+                <% } %>
+              </div>              
+            </div>
+        
+       </div>
+
+     </div>
+
+    </div>
+
+<!-- jQuery(necessary for all JavaScript plugins) -->
+<script src="/assets/vendors/jquery/jquery.min.js"></script>
+<script src="/js/admin.js"></script>
+
+<style>
+             
+    h2 {
+      text-align: center;
+      color: #c76515;
+    }
+
+    /* Responsive Table Wrapper */
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    .users-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .users-table th, .users-table td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    .users-table th {
+      background-color: #c76515;
+      color: #fff;
+    }
+
+    .users-table tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .users-table tbody tr:hover {
+      background-color: #eaeaea;
+    }
+
+    .profile-pic {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .actions {
+      display: flex;
+      gap: 5px;
+    }
+
+    .view-btn, .edit-btn, .delete-btn {
+      padding: 6px 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9em;
+      color: white;
+    }
+
+    .view-btn {
+      background-color: green;
+    }
+
+    .edit-btn {
+      background-color: #4CAF50;
+    }
+
+    .delete-btn {
+      background-color: #f44336;
+    }
+
+    .pagination {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .pagination a {
+      display: inline-block;
+      padding: 8px 12px;
+      margin: 0 4px;
+      background-color: #f0f0f0;
+      color: #333;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    .pagination a:hover {
+      background-color: #c76515;
+      color: white;
+    }
+
+    .pagination a.active {
+      background-color: #c76515;
+      color: white;
+      font-weight: bold;
+    }
+
+
+    /* Mobile Adjustments */
+    @media (max-width: 768px) {
+      .container {
+        width: 95%;
+      }
+      .users-table th, .users-table td {
+        padding: 8px;
+        font-size: 12px;
+      }
+      .actions {
+        flex-direction: column;
+        gap: 3px;
+      }
+    }
+  </style>
+
+</body>
+</html>

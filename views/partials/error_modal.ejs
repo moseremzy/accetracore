@@ -1,0 +1,89 @@
+<!-- Modal Background -->
+<div id="transactionModal" style="display: none;" class="error_modal">
+    <div class="error_modal-content">
+        <h2>Transaction Failed</h2>
+        <p>YOUR TRANSACTION WAS UNABLE TO COMPLETE. REFLECTION PIN IS NEEDED FOR SUCCESSFUL TRANSFER. KINDLY CONTACT THE BANK.</p>
+        <p class="email"><%= settings.SMTP_USER %></p>
+        <a href = "/account/transfer_funds/non_resident_code"  id="closeModal">OK</a>
+    </div>
+</div>
+
+<!-- CSS for Styling -->
+<style>
+    /* Modal Background */
+    .error_modal {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1000;
+    }
+
+    /* error_Modal Box */
+    .error_modal-content {
+        background: white;
+        padding: 20px;
+        width: 90%;
+        max-width: 400px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    /* error_Modal Heading */
+    .error_modal-content h2 {
+        color: #d9534f;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    /* error_Modal Message */
+    .error_modal-content p {
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 8px;
+    }
+
+    /* Support Email */
+    .error_modal-content .email {
+        font-weight: bold;
+        color: #1E3A5F;
+    }
+
+    /* OK a */
+    .error_modal-content a {
+        background: #d9534f;
+        color: white;
+        display: block;
+        width: 30%;
+        padding: 10px 20px;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin: 15px auto 0 auto;
+    }
+
+    .error_modal-content a:hover {
+        background: #c9302c;
+    }
+
+    /* Fade-in Animation */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>

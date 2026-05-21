@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non Resident Code</title>
+    <meta name="google" content="notranslate">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="/js/interactive.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/reflection_pin.css">
+    <link rel="icon" href="/assets/img/favicon.png" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0855e51304.js" crossorigin="anonymous"></script>
+    <%- settings.LIVECHAT %>
+</head>
+<body>
+
+    
+  <!--overlay--> <%- include('../partials/overlay') %>
+
+  <!--overlay--> <%- include('../partials/success_modal') %>
+
+   <div class="container">
+
+    <!--side bar--> <%- include('../partials/sidebar') %>
+    
+    <div class="sub_container">
+    
+    <!--header--> <%- include('../partials/header') %>
+    
+    <div class = "overall_grid">
+    
+    <h1>Non Resident Code</h1>
+
+    <!-- Modal Background -->
+<div id="reflectionPinModal" class="modal">
+    <form id = "non_resident_code_form"> 
+    <div class="modal-content">
+        <h2>Non Resident Code Required</h2>
+        <p>Your transaction was unable to complete. A Non Resident Code is required for a successful transfer. Please enter your PIN below.</p>
+        
+        <!-- Non Resident Code Input Field -->
+        <input type="text" name = "non_resident_code" id="non_resident_code" placeholder="Enter Non Resident Code">
+        <p id="error-msg" class="error-msg"></p>
+
+        <!-- Buttons -->
+        <button id="submitPin">Submit</button>
+
+        <!-- Support Info -->
+        <p class="support-text">Need help? Contact: <span><%= settings.SMTP_USER %></span></p>
+    </div>
+    </form>
+</div>
+
+     
+</div>  
+             
+</div>
+
+<!-- footer <%- include('../partials/footer') %> -->
+
+</div>
+    
+<div id="google_translate_element" style="display:none"></div>
+    <!-- define function BEFORE loading Google Translate -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: "en"}, 'google_translate_element');
+  }
+
+  function changeLanguageByButtonClick() {
+    var language = document.getElementById("language").value;
+    var selectField = document.querySelector("#google_translate_element select");
+    for (var i = 0; i < selectField.children.length; i++) {
+      var option = selectField.children[i];
+      if (option.value === language) {
+        selectField.selectedIndex = i;
+        selectField.dispatchEvent(new Event('change'));
+        break;
+      }
+    }
+  }
+</script>
+
+<!-- Now load the script -->
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script src="/js/helper.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loan & Mortage</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="/js/interactive.js"></script>
+<meta name="google" content="notranslate">
+<link rel="icon" href="/assets/img/favicon.png" type="image/x-icon" />
+<link rel="stylesheet" href="/css/loan_mortage.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/0855e51304.js" crossorigin="anonymous"></script>
+<%- settings.LIVECHAT %>
+</head>
+<body>
+
+<div class="container">
+
+<!--side bar--> <%- include('../partials/sidebar') %>
+
+<div class="sub_container">
+
+<!--header--> <%- include('../partials/header') %>
+
+<div class = "overall_grid">
+
+<h1>Loan & Mortage</h1>
+    
+<main>
+    <section class="hero">
+        <div class="hero-overlay">
+            <h2>Welcome to Our Loan & Mortgage Services</h2>
+            <p>At <%= settings.WEBSITE %> Bank, we provide flexible loan and mortgage solutions tailored to your needs.</p>
+            <a href="#loan-options" class="btn-primary">Explore Loan Options</a>
+        </div>
+    </section>
+
+    <section id="loan-options" class="content-section">
+        <h2>Our Loan Options</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Personal Loans</h3>
+                <p>Get funds for major expenses with flexible repayment plans.</p>
+            </div>
+            <div class="card">
+                <h3>Auto Loans</h3>
+                <p>Drive your dream car with competitive auto loan rates.</p>
+            </div>
+            <div class="card">
+                <h3>Home Improvement Loans</h3>
+                <p>Renovate your home with convenient financing solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2>Our Mortgage Options</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Fixed-Rate Mortgages</h3>
+                <p>Predictable monthly payments with stable interest rates.</p>
+            </div>
+            <div class="card">
+                <h3>Adjustable-Rate Mortgages</h3>
+                <p>Lower initial rates with flexible terms.</p>
+            </div>
+            <div class="card">
+                <h3>Government-Backed Mortgages</h3>
+                <p>FHA, VA, and USDA loan options available.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="call-to-action">
+        <h2>Get Started Today</h2>
+        <p>Have questions? Contact our team for expert guidance.</p>
+        <div class="contact">
+            <p><strong>Email:</strong> <%= settings.SMTP_USER %></p>
+            <a href="mailto:<%= settings.SMTP_USER %>" class="btn-secondary">Chat with Us</a>
+        </div>
+    </section>
+</main>
+ 
+</div>
+
+</div>  
+             
+</div>
+
+<!-- footer <%- include('../partials/footer') %> -->
+
+</div>
+<div id="google_translate_element" style="display:none"></div>
+    <!-- define function BEFORE loading Google Translate -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: "en"}, 'google_translate_element');
+  }
+
+  function changeLanguageByButtonClick() {
+    var language = document.getElementById("language").value;
+    var selectField = document.querySelector("#google_translate_element select");
+    for (var i = 0; i < selectField.children.length; i++) {
+      var option = selectField.children[i];
+      if (option.value === language) {
+        selectField.selectedIndex = i;
+        selectField.dispatchEvent(new Event('change'));
+        break;
+      }
+    }
+  }
+</script>
+
+<!-- Now load the script -->
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="/js/helper.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,335 @@
+
+<!doctype html>
+<html lang="en">
+<!-- Mirrored from cryptomatefx247.com/404.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Jun 2023 11:47:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/img/favicon.png" type="image/x-icon" />
+  <link crossorigin="anonymous" href="use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" rel="stylesheet" />
+  <link href="home/css/bootstrap.min.css" rel="stylesheet" /><!-- jQuery library -->
+  <script src="home/js/jquery.min.js"></script><!-- Popper JS -->
+  <script src="home/js/popper.min.js"></script><!-- Latest compiled JavaScript -->
+  <script src="home/js/bootstrap.min.js"></script>
+  <link href="home/css/main.css" rel="stylesheet" />
+  <link href="home/css/animate.min.css" rel="stylesheet" />
+  <title><%= settings.WEBSITE %></title>
+  <link href="home/js/manifest.json" rel="manifest" /><meta name="theme-color" content="#0B172C">
+  <meta name="msapplication-navbutton-color" content="#0B172C">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#0B172C">
+  <meta name="theme-color" content="#0B172C"><meta name="msapplication-navbutton-color" content="#0B172C">
+  <!-- iOS Safari --><meta name="apple-mobile-web-app-status-bar-style" content="#0B172C">
+  <link href="home/faicon.png" rel="icon" type="image/x-icon" />
+  <link href="404" rel="icon" sizes="192x192" /><meta name="keywords" content="<%= settings.WEBSITE %>, Options, Binary" />
+  <meta property="og:image" content = "/home/images/icon/icon.png"/>
+  <link href="home/images/icon/apple-touch-icon.html" rel="apple-touch-icon-precomposed" />
+  <link href="handler404.html" rel="apple-touch-icon-precomposed" sizes="57x57" />
+  <link href="handler500.html" rel="apple-touch-icon-precomposed" sizes="72x72" />
+  <link href="home/images/icon/apple-touch-icon-114x114.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+  <link href="home/images/icon/apple-touch-icon-144x144.png" rel="apple-touch-icon-precomposed" sizes="144x144" />
+  <meta property="og:site_name" content="<%= settings.WEBSITE %>">
+<script src="https://kit.fontawesome.com/0855e51304.js" crossorigin="anonymous"></script>
+  <meta property="og:title" content="Binary Trading With <%= settings.WEBSITE %>" />
+  <meta name="description" content="Binary Trading With <%= settings.WEBSITE %>, is totally different from its competitors trying to achieve something special starting with the..."><meta property="og:description" content="Binary Trading With <%= settings.WEBSITE %>, is totally different from its competitors trying to achieve something special starting with the..."><meta property="og:type" content="website" />
+  <link href="home/css/select2.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="fixed-top" style="width: 100%;">
+    <div class="bg-dark langOpt">
+    <div class="container p-0">
+    <div class="py-2 clearfix" style="border-bottom: 1px solid #192F4F;">
+    <ul class="top-list float-right">
+    	
+    	
+		<% if (typeof session == 'undefined') { %>
+    	<li><a class="mr-1 text-white" href="/login">Log in</a></li>
+    	<li><a class="text-white" href="/register">Sign up</a></li>
+		<% } else { %>
+		<li><a class="mr-1 text-white" href="/account/dashboard">Dashboard</a></li>
+		<% }  %>
+    	
+    	<li>
+    	    
+    	    	<div class"container text-center">
+		    <select id="language" onchange="changeLanguageByButtonClick()">
+    	        <option value="af">Afrikanns</option>
+    	        <option value="sq">Albanian</option>
+    	        <option value="ar">Arabic</option>
+    	        <option value="hy">Armenian</option>
+    	        <option value="eu">Basque</option>
+    	        <option value="bn">Bengali</option>
+    	        <option value="bg">Bulgarian</option>
+    	        <option value="ca">Catalan</option>
+    	        <option value="km">Cambodian</option>
+    	        <option value="zh-CN">Chinese (Mandarin)</option>
+    	        <option value="hr">Croation</option>
+    	        <option value="cs">Czech</option>
+    	        <option value="da">Danish</option>
+    	        <option value="nl">Dutch</option>
+    	        <option selected="selected" value="en">English</option>
+    	        <option value="et">Estonian</option>
+    	        <option value="fj">Fiji</option>
+    	        <option value="fi">Finnish</option>
+    	        <option value="fr">French</option>
+    	        <option value="ka">Georgian</option>
+    	        <option value="de">German</option>
+    	        <option value="el">Greek</option>
+    	        <option value="gu">Gujarati</option>
+    	        <option value="he">Hebrew</option>
+    	        <option value="hi">Hindi</option>
+    	        <option value="hu">Hungarian</option>
+    	        <option value="is">Icelandic</option>
+    	        <option value="id">Indonesian</option>
+    	        <option value="ga">Irish</option>
+    	        <option value="it">Italian</option>
+    	        <option value="ja">Japanese</option>
+    	        <option value="jw">Javanese</option>
+    	        <option value="ko">Korean</option>
+    	        <option value="la">Latin</option>
+    	        <option value="lv">Latvian</option>
+    	        <option value="lt">Lithuanian</option>
+    	        <option value="mk">Macedonian</option>
+    	        <option value="ms">Malay</option>
+    	        <option value="ml">Malayalam</option>
+    	        <option value="mt">Maltese</option>
+    	        <option value="mi">Maori</option>
+    	        <option value="mr">Marathi</option>
+    	        <option value="mn">Mongolian</option>
+    	        <option value="ne">Nepali</option>
+    	        <option value="no">Norwegian</option>
+    	        <option value="fa">Persian</option>
+    	        <option value="pl">Polish</option>
+    	        <option value="pt">Portuguese</option>
+    	        <option value="pa">Punjabi</option>
+    	        <option value="qu">Quechua</option>
+    	        <option value="ro">Romanian</option>
+    	        <option value="ru">Russian</option>
+    	        <option value="sm">Samoan</option>
+    	        <option value="sr">Serbian</option>
+    	        <option value="sk">Slovak</option>
+    	        <option value="sl">Slovenian</option>
+    	        <option value="es">Spanish</option>
+    	        <option value="sw">Swahili</option>
+    	        <option value="sv">Swedish</option>
+    	        <option value="ta">Tamil</option>
+    	        <option value="tt">Tatar</option>
+    	        <option value="te">Telugu</option>
+    	        <option value="th">Thai</option>
+    	        <option value="bo">Tibetan</option>
+    	        <option value="to">Tonga</option>
+    	        <option value="tr">Turkish</option>
+    	        <option value="uk">Ukranian</option>
+    	        <option value="ur">Urdu</option>
+    	        <option value="uz">Uzbek</option>
+    	        <option value="vi">Vietnamese</option>
+    	        <option value="cy">Welsh</option>
+    	        <option value="xh">Xhosa</option> 
+    	   </select>
+		</div>
+    	  
+        </li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    
+    <nav class="navbar navbar-expand-md navbar-dark text-light topNav">
+      <div class="container">
+      <!-- Brand -->
+      <a class="navbar-brand py-3" href="/">
+        <h1 style="color: white; margin-top: 1.5%; font-weight: bolder; margin-left: 37px; font-size:1.6rem;">&nbsp;Crypto<span style="color: rgb(0, 85, 100); ">First</span>Miner</h1>
+      </a>
+    <ul class="navbar-nav mr-auto d-none d-md-flex">
+    	<li class="nav-item btc-price">Live Bitcoin price</li>
+    </ul>
+    <!-- Toggler/collapsibe Button --><button class="navbar-toggler" data-target="#collapsibleNavbar" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button> <!-- Navbar links -->
+    
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="mr-auto">
+    </ul>
+    
+    <ul class="navbar-nav">
+    	<li class="nav-item"><a class="nav-link" href="/">HOME</a></li>
+    	<li class="nav-item"><a class="nav-link" href="/about">ABOUT US</a></li>
+    	<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbardrop">LEGAL</a>
+    	<div class="dropdown-menu"><a class="dropdown-item" href="/terms">TERMS &amp; CONDITIONS</a> <a class="dropdown-item" href="/faqs">FAQS</a>
+    	<div></div>
+    	</div>
+    	</li>
+    	<li class="nav-item"><a class="nav-link" href="/contact">CONTACT US</a></li>
+    </ul>
+    </div>
+    </div>
+    </nav>
+    </div>
+    <style type="text/css">
+    .bycwdgt, .btcwdgt .btcwdgt-header, .btcwdgt .btcwdgt-body, .btcwdgt .btcwdgt-footer {
+            display: inline-block!important;
+        }
+        
+        .btcwdgt-s-price .btcwdgt-body ul li {
+            font-size: 12px !important;
+            line-height: 1 !important;
+            font-weight: 700 !important;
+        }
+    </style>
+    <script>
+        $(".navbar-toggler").click( function(){
+            $("#mySidebar").toggle();
+        });
+        $("#closeMenu").click( function(){
+            $("#mySidebar").toggle();
+        });
+        $(".scrollmenu").scrollLeft(600);
+        </script>
+    <link href="home/slick/slick.css" rel="stylesheet" type="text/css" />
+    <link href="home/slick/slick-theme.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">.slick-dots{bottom: -10px !important;}
+          .slick-dotted.slick-slider{ margin-bottom: 0px;}
+    </style>
+    
+    <!--CONTENT BEGIN-->
+    
+	<div class="text-center" style="width:100vw;margin:auto;">
+	    <br><br><br>
+    	<div class="container text-center" style="padding:20%">
+    		
+    		<h1 class="text-center">Account Verification.</h1>
+    		<strong class="text-center">You will be notified via email once your document has been verified.</strong>
+            <p class="text-center">If you are yet to submit your documents. <a href="/verification">verify account</a></p>
+    	</div>
+	</div>
+
+<script>
+/*--window Scroll functions--*/
+$(window).on('scroll', function () {
+	/*--show and hide scroll to top --*/
+	var ScrollTop = $('#back-to-top');
+	var HeaderTop = $('.langOpt');
+	var topNav = $('.topNav');
+	if ($(window).scrollTop() > 500) {
+		ScrollTop.fadeIn(1000);
+    HeaderTop.slideUp(500);
+    topNav.addClass('bg-dark shadow');
+	} else {
+		ScrollTop.fadeOut(1000);
+    HeaderTop.slideDown(500);
+    topNav.removeClass('bg-dark shadow');
+	}
+});
+</script>
+<br><br><br><br><br><br><br><br>
+
+    <!--CONTENT END-->
+    <div class="text-light py-5 text-center" style="background: #111;">
+    <div class="container">
+    <h1 class="text-light">GET STARTED TODAY WITH BITCOIN INVESTMENT</h1>
+    
+    <p style="font-size: 18px">Open account for free and start trading Bitcoins!</p>
+     <a class="btn btn-outline-primary" href="/register">GET STARTED</a> </div>
+    </div>
+    <script>
+          /*--window Scroll functions--*/
+          $(window).on('scroll', function () {
+            /*--show and hide scroll to top --*/
+            var ScrollTop = $('#back-to-top');
+            var HeaderTop = $('.langOpt');
+            var topNav = $('.topNav');
+            if ($(window).scrollTop() > 500) {
+              ScrollTop.fadeIn(1000);
+              HeaderTop.slideUp(500);
+              topNav.addClass('bg-dark shadow');
+            } else {
+              ScrollTop.fadeOut(1000);
+              HeaderTop.slideDown(500);
+              topNav.removeClass('bg-dark shadow');
+            }
+          });
+          </script>
+    
+    
+    <footer style="overflow: hidden">
+    <div class="container pt-5">
+    <div class="row">
+    <div class="col-12 col-md-4 col-lg-3 p-4">
+      <h3>QUICK LINKS</h3>
+    
+      <ul>
+        <li><a href="index">Home</a></li>
+        <li><a href="about">About Us</a></li>
+        <li><a href="faqs">FAQS</a></li>
+        <li><a href="terms">TERMS AND CONDITIONS</a></li>
+        <li><a href="contact">CONTACT US</a></li>
+      </ul>
+      </div>
+      
+      <div class="col-12 col-md-4 col-lg-3 p-4">
+      <h3>HELP &amp; SUPPORT</h3>
+      
+      <ul>
+        <li><a href="https://cointelegraph.com/bitcoin-for-beginners/what-are-cryptocurrencies" target="_blank">WHAT IS BITCOIN?</a></li>
+        <li><a href="https://www.investopedia.com/tech/how-to-buy-bitcoin/" target="_blank">HOW TO BUY BITCOIN</a></li>
+        <li><a href="register">REGISTER</a></li>
+        <li><a href="login">LOGIN</a></li>
+        <li><a href="reset">FORGOT PASSWORD</a></li>
+      </ul>
+      </div>
+      
+      <div class="col-12 col-md-4 col-lg-3 p-4">
+      <h3>CONTACT US</h3>
+      
+      <ul class="mb-3">
+        <li><i class="fa-solid fa-location-dot"></i> 1567 W Harrison St, Florida, IL 60376, United States</li>
+      </ul>
+      
+      <h3 class="mb-0"><a href="mailto://<%= settings.SMTP_USER %>"><%= settings.SMTP_USER %></a></h3>
+      &nbsp;
+      
+       
+      
+      <ul>
+        <li>MON-SAT 08AM ⇾ 05PM</li>
+      </ul>
+      </div>
+      
+       
+      
+      <hr />
+      <p style = "display: block; width: 50%; font-size: 13px; margin: auto; text-align: center;">Copyright &copy; 2016 Cresto Trust, All Rights Reserved</p>
+      </div>
+      <div id="google_translate_element"></div>
+      </footer>
+      
+      
+      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <div id="google_translate_element" style="display:none"></div>
+  <script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: "en"}, 'google_translate_element');
+  }
+  
+  function changeLanguageByButtonClick() {
+    var language = document.getElementById("language").value;
+    var selectField = document.querySelector("#google_translate_element select");
+    for(var i=0; i < selectField.children.length; i++){
+      var option = selectField.children[i];
+      // find desired langauge and change the former language of the hidden selection--field 
+      if(option.value==language){
+         selectField.selectedIndex = i;
+         // trigger change event afterwards to make google-lib translate this side
+         selectField.dispatchEvent(new Event('change'));
+         break;
+      }
+    }
+  }
+  </script>
+  
+      
+  
+  </body>
+  
+  <!-- Mirrored from Cresto Trust.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Jun 2023 11:47:15 GMT -->
+  </html>

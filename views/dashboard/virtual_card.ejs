@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Virtual Card</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="/js/interactive.js"></script>
+<meta name="google" content="notranslate">
+<link rel="stylesheet" href="/css/virtual_card.css">
+<link rel="icon" href="/assets/img/favicon.png" type="image/x-icon" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/0855e51304.js" crossorigin="anonymous"></script>
+<%- settings.LIVECHAT %>
+</head>
+<body>
+
+<div class="container">
+
+<!--side bar--> <%- include('../partials/sidebar') %>
+
+<div class="sub_container">
+
+<!--header--> <%- include('../partials/header') %>
+
+<div class = "overall_grid">
+
+<h1>Virtual Card</h1>
+ 
+<div class="atm-card">
+    <div class="bank-name"><%= settings.WEBSITE.toUpperCase() %> BANK</div>
+    <div class="card-chip"></div>
+    <div class="card-number"><%= JSON.parse(user.virtual_card).card_number %></div>
+    <div class="card-holder"><%= JSON.parse(user.virtual_card).name %></div>
+    <div class="card-expiry">
+      <span>VALID THRU</span>
+      <strong><%= JSON.parse(user.virtual_card).expiry %></strong>
+    </div>
+</div>
+
+<p style="width: 90%; text-align: center; margin: 20px auto 0px auto; font-size: 14px;">VIRTUAL CARD IS TEMPORARY DISABLED. PLEASE CONTACT CUSTOMER SUPPORT FOR MORE INFORMATION REGARDING THIS.</p> 
+
+</div>  
+             
+</div>
+
+<!-- footer <%- include('../partials/footer') %> -->
+
+</div>
+
+<div id="google_translate_element" style="display:none"></div>
+    <!-- define function BEFORE loading Google Translate -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: "en"}, 'google_translate_element');
+  }
+
+  function changeLanguageByButtonClick() {
+    var language = document.getElementById("language").value;
+    var selectField = document.querySelector("#google_translate_element select");
+    for (var i = 0; i < selectField.children.length; i++) {
+      var option = selectField.children[i];
+      if (option.value === language) {
+        selectField.selectedIndex = i;
+        selectField.dispatchEvent(new Event('change'));
+        break;
+      }
+    }
+  }
+</script>
+
+<!-- Now load the script -->
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script src="/js/helper.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="/admin/dashboard.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <!-- <script src="/home/js/interactive.js"></script> -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <script src="https://kit.fontawesome.com/0855e51304.js" crossorigin="anonymous"></script>
+        <link rel="shortcut icon" type="image/png" href="/home/faicon.png">
+        <title>Edit User</title>
+    </head>
+<body>
+
+   <!--overlay--> <%- include('../partials/overlay') %>
+
+    <div class="container">
+
+    <!--side bar--> <%- include('../partials/admin_sidebar') %>
+    
+    <div class="sub_container">
+    
+    <!--header--> <%- include('../partials/admin_header') %>
+    
+    <div class = "overall_grid">
+            
+     <h1>Edit User</h1>
+     
+        <div class="form_container">
+   
+          <div class="profile">
+            <img src="/<%= user.profile_photo %>" alt="Profile Picture">
+          </div>
+      
+          <form action="/update" method="post">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id = "email" name="email" value="<%= user.email %>" readonly>
+            </div>
+      
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" name="firstname" value="<%= user.firstname %>" required>
+              </div>
+      
+              <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" name="lastname" value="<%= user.lastname %>" required>
+              </div>
+            </div>
+      
+            <div class="form-row">
+              <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" name="address" value="<%= user.address %>" required>
+              </div>
+      
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="text" name="phone" value="<%= user.phone %>" required>
+              </div>
+            </div>
+      
+            <div class="form-row">
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="text" name="password" value="<%= user.password %>" required>
+              </div>
+      
+              <div class="form-group">
+                <label for="country">Country</label>
+                <select name="country" readonly>
+                  <option value="<%= user.country %>"><%= user.country %></option>
+                  <!-- Add additional countries -->
+                </select>
+              </div>
+            </div>
+           <hr>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="account_number">Account Number</label>
+                <input type="text" name="account_number" value="<%= user.account_number %>" disabled>
+              </div>
+      
+              <div class="form-group">
+                <label for="account_type">Account Type</label>
+                <select name="account_type" required>
+                  <option value="<%= user.account_type %>"><%= user.account_type %></option>
+                  <option>Savings</option>
+                  <option>Corporate</option>
+                  <option>Escrow</option>
+                  <option>Current</option>
+                </select>
+              </div>
+            </div>
+      
+            <div class="form-row">
+              <div class="form-group">
+                <label for="balance">Account Balance</label>
+                <input type="number" name="balance" value="<%= user.balance %>" required>
+              </div>
+      
+              <div class="form-group">
+                <label for="user_id">User ID</label>
+                <input type="number" name="user_id" id = "user_id" value="<%= user.user_id %>" readonly>
+              </div>
+            </div>
+      
+            <div class="form-row">
+              <div class="form-group">
+                <label>Non-resident Code</label>
+                <input type="text" value="<%= user.non_resident_code %>" name = "non_resident_code" required>
+              </div>
+              <div class="form-group">
+                <label>Anti Terrorism Verification Code</label>
+                <input type="text" value="<%= user.anti_terrorism_verification_code %>" name = "anti_terrorism_verification_code" required>
+              </div>
+              <div class="form-group">
+                <label>IMF/IBS Confirmation Code</label>
+                <input type="text" value="<%= user.imf_wbs_confirmation_code %>" name = "imf_wbs_confirmation_code" required>
+              </div>
+              <div class="form-group">
+                <label>Transfer Pin</label>
+                <input type="text" value="<%= user.four_digit_pin %>" disabled>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="monthly_income">Monthly Income</label>
+                <input type="number" name="monthly_income" value="<%= user.monthly_income %>" required>
+              </div>
+            
+              <div class="form-group">
+                <label for="monthly_outgoing">Monthly Outgoing</label>
+                <input type="number" name="monthly_outgoing" value="<%= user.monthly_outgoing %>" required>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="transaction_limit">Transaction Limit</label>
+                <input type="number" name="transaction_limit" value="<%= user.transaction_limit %>" required>
+              </div>
+            
+              <div class="form-group">
+                <label for="pending_transactions">Pending Transactions</label>
+                <input type="number" name="pending_transactions" value="<%= user.pending_transactions %>" required>
+              </div>
+            </div>
+          
+          
+            <div class="form-row"> 
+              <div class="form-group">
+                <label for="transaction_volume">Transaction Volume</label>
+                <input type="number" name="transaction_volume" value="<%= user.transaction_volume %>" required>
+              </div>
+            </div>
+
+            <button type="submit">Update</button>
+            <button type="button" id="resetTransactionsBtn">
+                Reset Transactions History
+            </button>
+             
+          </form>
+      
+          <hr>
+
+          <form id="fund_account_form" method="post">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Fund Main Balance</label>
+                <input type="number" id="amount" name="amount" placeholder="How much are you adding to main balance?" required>
+              </div>
+              <div class="form-group">
+                <label>Sender's Name</label>
+                <input type="text" id="sender_name" name="sender_name" placeholder="e.g. Michael Evans" required>
+              </div>
+            </div>
+            <button id="fund_btn"><i class="fa-solid fa-spinner"></i> Fund</button>
+          </form>
+      
+    </div>         
+
+ </div>
+</div>
+</div>
+
+<style>
+
+* {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+    }
+
+    .form_container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 20px 0;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group select {
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .textarea {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    .textarea textarea{
+      padding: 10px;
+      resize: none;
+      height: 250px;
+    }
+
+    .profile {
+      text-align: center;
+    }
+
+    .profile img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      background-color: #007bff;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #resetTransactionsBtn {
+      background-color: #ff453a;
+    }
+
+    #resetTransactionsBtn i {
+      margin-right: 5px;
+    }
+
+    @media(max-width: 700px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    
+</style>
+ <!-- jQuery(necessary for all JavaScript plugins) -->
+ <script src="/assets/vendor/jquery/jquery.min.js"></script>
+ <script src="/js/admin.js"></script>
+</body>
+</html>
+
+ 
+  

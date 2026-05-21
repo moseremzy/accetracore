@@ -1,0 +1,262 @@
+<header class = "header">
+
+    <div class = "hamburger_account">
+      <i class="fa-solid fa-bars open_hamburger"></i> <i class="fa-solid fa-bars close_hamburger"></i> 
+      <h1>Account</h1>
+    </div>
+
+    <div class = "name toggler">
+       <p class = "toggler">Hello, <%= admin.email %> <i class="fa-solid fa-caret-down toggler"></i>
+       </p>
+    </div>
+
+ </header>
+
+ <style>
+/* MOBILE VIEW */
+@media only screen and (max-width: 700px) {
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    background-color: #0B172C;
+    padding: 20px 30px;
+    box-sizing: border-box;
+}
+div.hamburger_account {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+div.hamburger_account h1{
+    margin: 0;
+    display: inline-block;
+    font-size: 18px;
+    vertical-align: middle;
+    color: white;
+    font-weight: lighter;
+}
+div.hamburger_account i.close_hamburger{
+    display: none;
+    font-size: 22px;
+    margin-right: 10px;
+    color: gray;
+}
+div.hamburger_account i.open_hamburger{
+    display: inline-block;
+    font-size: 22px;
+    margin-right: 10px;
+    color: gray;
+}
+div.name {
+    align-items: center;
+    display: flex;
+    margin: 0;
+    cursor: pointer;
+}
+#profile_pix {
+    border-radius: 100%;
+    display: inline-block;
+    margin-right: 10px;
+    width:30px;
+    height: 30px;
+}
+div.name i{
+    font-size: 10px;
+    vertical-align: middle;
+}
+div.name p{
+    position: relative;
+    color: white;
+    margin: 0;
+    text-transform: capitalize;
+    font-size: 14px;
+}
+.pop_up_box {
+    position: absolute;
+    top: 60px;
+    border: 1px solid #c5c7ca;
+    right: 25px;
+    background-color: white;
+    color: gray;
+    padding: 0px 11px;
+    width: 100px;
+    text-align: left;
+}
+.pop_up_box a{
+     text-decoration: none;
+     cursor: pointer;
+     font-size: 14px;
+     color: gray;
+     margin: 10px 0px;
+     display: block;
+}
+}
+/* MOBILE VIEW */
+
+
+/*TABLET VIEW*/
+@media only screen and (min-width: 700px) and (max-width: 850px) {
+    .header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+        background-color: #0B172C;
+        padding: 20px 30px;
+        box-sizing: border-box;
+    }
+    div.sub_container {
+        display: block;
+        margin:0;
+        width: 100%;
+    }
+    div.hamburger_account {
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+    div.hamburger_account h1{
+        margin: 0;
+        display: inline-block;
+        font-size: 18px;
+        vertical-align: middle;
+        color: white;
+        font-weight: lighter;
+    }
+    div.hamburger_account i.close_hamburger{
+        display: none;
+        font-size: 22px;
+        margin-right: 10px;
+        color: gray;
+    }
+    div.hamburger_account i.open_hamburger{
+        display: inline-block;
+        font-size: 22px;
+        margin-right: 10px;
+        color: gray;
+    }
+    div.name {
+        align-items: center;
+        display: flex;
+        cursor: pointer;
+        margin: 0;
+    }
+    #profile_pix {
+        border-radius: 100%;
+        display: inline-block;
+        margin-right: 10px;
+        width:30px;
+        height: 30px;
+    }
+    div.name i{
+        font-size: 10px;
+        vertical-align: middle;
+    }
+    div.name p{
+        position: relative;
+        text-transform: capitalize;
+        color: white;
+        margin: 0;
+        font-size: 14px;
+    }
+    .pop_up_box {
+        position: absolute;
+        top: 60px;
+        border: 1px solid #c5c7ca;
+        right: 25px;
+        background-color: white;
+        color: gray;
+        padding: 0px 11px;
+        width: 100px;
+        text-align: left;
+    }
+    .pop_up_box a{
+         text-decoration: none;
+         cursor: pointer;
+         font-size: 14px;
+         color: gray;
+         margin: 10px 0px;
+         display: block;
+    }
+}
+/*TABLET VIEW*/
+
+
+/*DESKTOP VIEW*/
+@media only screen and (min-width: 850px) {
+    .header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+        background-color: #0B172C;
+        padding: 20px 30px;
+        box-sizing: border-box;
+    }
+    div.hamburger_account {
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+    div.hamburger_account h1{
+        margin: 0;
+        display: inline-block;
+        font-size: 18px;
+        vertical-align: middle;
+        color: white;
+        font-weight: lighter;
+    }
+    div.hamburger_account i{
+        display: none;
+        font-size: 22px;
+        margin-right: 10px;
+        color: gray;
+    }
+    div.name {
+        align-items: center;
+        display: flex;
+        cursor: pointer;
+        margin: 0;
+    }
+    #profile_pix {
+        border-radius: 100%;
+        display: inline-block;
+        margin-right: 10px;
+        width:30px;
+        height: 30px;
+    }
+    div.name i{
+        font-size: 10px;
+        vertical-align: middle;
+    }
+    div.name p{
+        position: relative;
+        color: white;
+        margin: 0;
+        font-size: 14px;
+        text-transform: capitalize;
+    }
+    .pop_up_box {
+        position: absolute;
+        top: 60px;
+        border: 1px solid #c5c7ca;
+        right: 25px;
+        background-color: white;
+        color: gray;
+        padding: 0px 11px;
+        width: 100px;
+        text-align: left;
+    }
+    .pop_up_box a{
+         text-decoration: none;
+         cursor: pointer;
+         font-size: 14px;
+         color: gray;
+         margin: 10px 0px;
+         display: block;
+    }
+}
+/*DESKTOP VIEW*/
+ </style>

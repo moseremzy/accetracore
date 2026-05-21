@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Email Verification</title>
+  <link rel="icon" href="assets/img/favicon.png" type="image/x-icon" />
+
+  <!-- Internal CSS for styling -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f2f4f8;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .main {
+      width: 100%;
+      max-width: 500px;
+      background: #ffffff;
+      padding: 40px 30px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+    }
+
+    .form-title {
+      font-size: 26px;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #1d3557;
+    }
+
+    .signup-content p {
+      margin-bottom: 15px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    strong {
+      color: #1d3557;
+    }
+
+    @media (max-width: 600px) {
+      .main {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+
+  <!-- jQuery and JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="/assets/js/interactive.js" defer></script>
+</head>
+
+<body>
+  <div class="main">
+    <section class="signup">
+      <div class="signup-content">
+        <form class="signup-form" action="/login" method="post">
+          <h2 class="form-title">Email Verification</h2>
+          <div>
+            <p>Thank you for signing up!</p>
+            <p>We've sent a verification link to your email address:</p>
+            <p><strong><%= email %></strong></p>
+            <p>Please check your inbox and click the link to complete your registration.</p>
+            <p>If you don’t see the email, kindly check your <strong>Spam</strong> or <strong>Promotions</strong> folder.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

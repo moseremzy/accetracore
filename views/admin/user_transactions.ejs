@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="/admin/dashboard.css">
+        <!-- <script src="/home/js/interactive.js"></script> -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <script src="https://kit.fontawesome.com/0855e51304.js" crossorigin="anonymous"></script>
+        <title>Transactions</title>
+    </head>
+<body>
+
+    <!--overlay--> <%- include('../partials/overlay') %>
+
+   <div class="container">
+
+    <!--side bar--> <%- include('../partials/admin_sidebar') %>
+    
+    <div class="sub_container">
+    
+    <!--header--> <%- include('../partials/admin_header') %>
+    
+    <div class = "overall_grid">
+            
+    <h1>Transactions</h1>
+
+    <div class="transactions-container">
+      <div class="table-responsive">
+        <table class="transactions-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Account Name</th>
+              <th>Status</th>
+              <th>Amount</th>
+              <th>Description</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+        
+          <tbody>
+            <% if (transactions.length === 0) { %>
+              <tr>
+                <td colspan="7" style="text-align:center; padding: 20px; font-weight: bold;">
+                  No Transactions
+                </td>
+              </tr>
+            <% } else { %>
+              <% transactions.forEach((transaction) => { %>
+                <tr>
+                  <td><%= transaction.transaction_id %></td>
+                  <td><%= transaction.account_name %></td>
+                  <td class="<%= transaction.kind %>"><%= transaction.kind %></td>              
+                  <td><%= new Intl.NumberFormat('en-US', { style: 'currency', currency: transaction.currencyCode }).format(transaction.amount) %></td>
+                  <td><%= transaction.description %></td>
+                  <td><%= transaction.date %></td>
+                  <td class="actions">
+                    <% if (transaction.kind === 'debit') { %>
+                      <button class="approve-btn" onclick="reverse_transaction(<%= transaction.transaction_id %>, <%= transaction.user_id %>)">
+                        Reverse Transaction
+                      </button>   
+                    <% } %>             
+                    <button class="delete-btn" onclick="delete_transaction(<%= transaction.transaction_id %>)">Delete</button>
+                  </td>
+                </tr>
+              <% }) %>
+            <% } %>
+          </tbody>          
+        </table>
+        <div class="pagination">
+          <% if (totalPages > 1) { %>
+            <% for (let i = 1; i <= totalPages; i++) { %>
+              <a href="/account/user_transactions?page=<%= i %>&user_id=<%= transactions[0].user_id %>" class="<%= i === currentPage ? 'active' : '' %>"><%= i %></a>
+            <% } %>
+          <% } %>
+        </div>   
+    </div>
+  </div>
+
+ </div>
+</div>
+</div>
+
+
+  <style>
+    .transactions-container h2 {
+      margin-top: 0;
+      color: #c76515;
+      text-align: center;
+    }
+
+    /* Responsive Table Wrapper */
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    .transactions-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .transactions-table th, .transactions-table td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    .transactions-table th {
+      background-color: #c76515;
+      color: #fff;
+    }
+
+    .transactions-table tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .transactions-table tbody tr:hover {
+      background-color: #eaeaea;
+    }
+
+    .status {
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .status.Pending {
+      background-color: #ff9800;
+      color: #fff;
+    }
+
+    .status.Approved {
+      background-color: #4CAF50;
+      color: #fff;
+    }
+
+    .actions {
+      display: flex;
+      gap: 5px;
+    }
+
+    .approve-btn, .delete-btn {
+      padding: 6px 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9em;
+      color: white;
+    }
+
+    .approve-btn {
+      background-color: #4CAF50;
+    }
+
+    .delete-btn {
+      background-color: red;
+    }
+
+    .credit {
+      color: green;
+      font-weight: 500;
+    }
+
+    .debit {
+      color: red;
+      font-weight: 500;
+    }
+
+    .reversal {
+      color: orange;
+      font-weight: 500;
+    }
+    
+    .pagination {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .pagination a {
+      display: inline-block;
+      padding: 8px 12px;
+      margin: 0 4px;
+      background-color: #f0f0f0;
+      color: #333;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    .pagination a:hover {
+      background-color: #c76515;
+      color: white;
+    }
+
+    .pagination a.active {
+      background-color: #c76515;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* Mobile Adjustments */
+    @media (max-width: 768px) {
+      .container {
+        width: 95%;
+      }
+      .transactions-table th, .transactions-table td {
+        padding: 8px;
+        font-size: 12px;
+      }
+      .actions {
+        flex-direction: column;
+        gap: 3px;
+      }
+    }
+  </style>
+
+<!-- jQuery(necessary for all JavaScript plugins) -->
+<script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/js/admin.js"></script>
+</body>
+</html>

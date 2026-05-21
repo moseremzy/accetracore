@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif; /* Primary font */
+    font-weight: 400;
+    color: #333; /* Dark text for readability */
+    background-color: rgb(225, 230, 231);
+}
+
+div.overall_grid {
+  width: 95%;
+  margin: 0 auto;
+}
+
+div.overall_grid h1{
+  font-family: 'Ubuntu', sans-serif;
+  width: 90%;
+  text-align: left;
+  margin: 15px 0;
+  color: #0E2E45;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.atm-card {
+  width: 350px;
+  height: 200px;
+  background: linear-gradient(135deg, #001f3f, #0074d9);
+  color: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin: auto;
+  font-family: 'Oswald', sans-serif;
+  position: relative;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+  transform: perspective(500px) rotateX(10deg);
+  transition: transform 0.3s ease;
+}
+
+.atm-card:hover {
+  transform: perspective(500px) rotateX(0deg);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+}
+
+.bank-name {
+  font-size: 14px;
+  font-weight: bolder;
+  letter-spacing: 1px;
+}
+
+.card-chip {
+  width: 50px;
+  height: 35px;
+  background: linear-gradient(135deg, #b8860b, #ffd700, #b8860b);
+  border-radius: 6px;
+  position: absolute;
+  top: 44px;
+  left: 20px;
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.3),
+              inset -2px -2px 3px rgba(0, 0, 0, 0.3),
+              0 3px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-chip::before {
+  content: "";
+  width: 70%;
+  height: 60%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), transparent);
+  position: absolute;
+  border-radius: 4px;
+}
+
+.card-number {
+  font-size: 20px;
+  letter-spacing: 3px;
+  margin: 60px 0 10px;
+  font-weight: 500;
+}
+
+.card-holder {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.card-expiry {
+  font-size: 14px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.card-expiry span {
+  font-size: 10px;
+  display: block;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.card-expiry strong {
+  font-size: 16px;
+}
+
+/* MOBILE VIEW */
+@media only screen and (max-width: 700px) {
+div.container {
+    display: flex;
+    height: auto; 
+    width: 100%; 
+    margin: 0;
+    padding: 0;  
+}
+/*sub_container */
+div.sub_container {
+    display: block;
+    margin:0;
+    width: 100%; /*calc(100% - 250px)*/;
+}
+
+.atm-card {
+  width: 80%;
+  height: 200px;
+  background: linear-gradient(135deg, #001f3f, #0074d9);
+  color: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin: auto;
+  font-family: 'Oswald', sans-serif;
+  position: relative;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+  transform: perspective(500px) rotateX(10deg);
+  transition: transform 0.3s ease;
+}
+
+}
+
+
+/*TABLET VIEW*/
+@media only screen and (min-width: 700px) and (max-width: 850px) {
+
+    div.container {
+        display: flex;
+        height: auto;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    div.sub_container {
+        display: block;
+        margin:0;
+        width: 100%;
+    }
+
+}
+
+
+    
+/*DESKTOP VIEW*/
+@media only screen and (min-width: 850px) {
+    div.container {
+        display: flex;
+        height: auto;
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        margin: 0;
+        padding: 0;
+    }
+    div.sub_container {
+        display: block;
+        margin:0 0 0 250px;
+        width: calc(100% - 250px);
+    }
+    
+}
+ 

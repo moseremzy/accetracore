@@ -1,0 +1,216 @@
+<div class = "side_bar">
+    <h3>@Admin</h3>
+    <ul>
+        <li><a href="/account/admin_dashboard"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+        <li><a href="/account/user_transactions?page=1"><i class="fa-solid fa-calendar-days"></i> Transactions</a></li>
+        <li><a href="/account/users?page=1"><i class="fa-solid fa-users"></i> Users</a></li>
+        <li><a href="/admin_logout"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a></li>
+    </ul>
+</div>
+
+<style>
+  /* MOBILE VIEW */
+@media only screen and (max-width: 700px) {
+    div.side_bar {
+    display: none;
+    height: 100vmax;
+    box-sizing: border-box;
+    margin: 0;
+    color: white;
+    width: 250px;
+    font-size: 15px;
+    background-color: #0B172C;
+    padding: 20px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+    
+.side_bar h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #f8f8f8;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.side_bar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side_bar ul li {
+    margin-bottom: 15px;
+}
+
+.side_bar ul li a {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #ddd;
+    text-decoration: none;
+    padding: 12px 15px;
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+.side_bar ul li a i {
+    margin-right: 12px;
+    font-size: 16px;
+    color: #ffa500; /* Highlight color */
+}
+
+.side_bar ul li a:hover {
+    background: #333;
+    color: white;
+    transform: scale(1.05);
+}
+
+.side_bar ul li a.active {
+    background: #ffa500;
+    color: #222;
+}
+
+
+}
+/* MOBILE VIEW */
+
+
+/*TABLET VIEW*/
+@media only screen and (min-width: 700px) and (max-width: 850px) {
+     
+div.side_bar {
+    display: none;
+    height: 100vmax;
+    box-sizing: border-box;
+    margin: 0;
+    color: white;
+    width: 250px;
+    font-size: 15px;
+    background-color: #0B172C;
+    padding: 20px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+    
+.side_bar h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #f8f8f8;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.side_bar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side_bar ul li {
+    margin-bottom: 15px;
+}
+
+.side_bar ul li a {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #ddd;
+    text-decoration: none;
+    padding: 12px 15px;
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+.side_bar ul li a i {
+    margin-right: 12px;
+    font-size: 16px;
+    color: #ffa500; /* Highlight color */
+}
+
+.side_bar ul li a:hover {
+    background: #333;
+    color: white;
+    transform: scale(1.05);
+}
+
+.side_bar ul li a.active {
+    background: #ffa500;
+    color: #222;
+}
+
+
+ }
+/*TABLET VIEW*/
+
+
+
+/*DESKTOP VIEW*/
+@media only screen and (min-width: 850px) {
+   
+    div.side_bar {
+    display: block;
+    position: fixed;
+    top:0;
+    left: 0;
+    height: 100vmax;
+    margin: 0;
+    color: white;
+    width: 250px;
+    font-size: 15px;
+    padding: 28px 0px 0px 0px;
+    background-color: #0B172C;
+    transition: 0.3s ease-in-out;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+    
+.side_bar h3 {
+    font-size: 16px;
+    margin: 20px;
+    color: #f8f8f8;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.side_bar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side_bar ul li {
+    margin-bottom: 15px;
+}
+
+.side_bar ul li a {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #ddd;
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 12px 15px;
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+.side_bar ul li a i {
+    margin-right: 12px;
+    font-size: 16px;
+    color: #ffa500; /* Highlight color */
+}
+
+.side_bar ul li a:hover {
+    background: #333;
+    color: white;
+    transform: scale(1.0);
+}
+
+.side_bar ul li a.active {
+    background: #ffa500;
+    color: #222;
+}
+
+}
+/*DESKTOP VIEW*/
+</style>

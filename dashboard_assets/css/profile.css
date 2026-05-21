@@ -1,0 +1,406 @@
+/* GENERAL STYLE */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif; /* Primary font */
+    font-weight: 400;
+    color: #333; /* Dark text for readability */
+    background-color: rgb(225, 230, 231);
+}
+
+div.overall_grid {
+    margin: 0 auto 0 auto;
+    width: 95%;
+}
+
+div.overall_grid h1{
+    font-family: 'Ubuntu', sans-serif;
+    width: 90%;
+    text-align: left;
+    margin: 15px 0;
+    color: #0E2E45;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+/* MOBILE VIEW */
+@media only screen and (max-width: 700px) {
+
+div.container {
+    display: flex;
+    height: auto; 
+    width: 100%; 
+    margin: 0;
+    padding: 0;  
+}
+ 
+div.sub_container {
+    display: block;
+    margin:0;
+    width: 100%; /*calc(100% - 250px)*/;
+}
+ 
+ 
+.profile_container {
+    background: white;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    margin: auto;
+}
+
+h2 {
+    font-size: 22px;
+    color: #0E2E45;
+    margin-bottom: 10px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 15px 0;
+}
+
+
+/* Profile Photo */
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ddd;
+}
+
+.profile label {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #268AC7;
+    border: 1px solid #268AC7;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.profile label:hover {
+    background: #268AC7;
+    color: white;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+/* Form Fields */
+.field {
+    margin-bottom: 15px;
+}
+
+.field label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.field input, .field textarea, .field select {
+    width: 100%;
+    resize: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #333;
+}
+
+.field input:focus, .field textarea:focus,  .field select:focus {
+    border-color: #268AC7;
+    outline: none;
+    box-shadow: 0 0 5px rgba(38, 138, 199, 0.5);
+}
+
+/* Submit Button */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    color: white;
+    background: #268AC7;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background: #1e6c99;
+}
+}
+
+/* MOBILE VIEW */
+    
+    
+/*TABLET VIEW*/
+@media only screen and (min-width: 700px) and (max-width: 850px) {
+    
+    div.container {
+        display: flex;
+        height: auto;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    div.sub_container {
+        display: block;
+        margin:0;
+        width: 100%;
+    }
+
+    .profile_container {
+        background: white;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        margin: auto;
+    }
+    
+    h2 {
+        font-size: 22px;
+        color: #0E2E45;
+        margin-bottom: 10px;
+    }
+    
+    hr {
+        border: 0;
+        height: 1px;
+        background: #e0e0e0;
+        margin: 15px 0;
+    }
+    
+    /* Profile Photo */
+    .profile {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .profile img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #ddd;
+    }
+    
+    .profile label {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px 12px;
+        font-size: 14px;
+        color: #268AC7;
+        border: 1px solid #268AC7;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    
+    .profile label:hover {
+        background: #268AC7;
+        color: white;
+    }
+    
+    input[type="file"] {
+        display: none;
+    }
+    
+    /* Form Fields */
+    .field {
+        margin-bottom: 15px;
+    }
+    
+    .field label {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #555;
+    }
+    
+    .field input, .field textarea, .field select {
+        resize: none;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 14px;
+        color: #333;
+    }
+    
+    .field input:focus, .field textarea:focus, .field select:focus {
+        border-color: #268AC7;
+        outline: none;
+        box-shadow: 0 0 5px rgba(38, 138, 199, 0.5);
+    }
+    
+    /* Submit Button */
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        color: white;
+        background: #268AC7;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    
+    button:hover {
+        background: #1e6c99;
+    }
+    
+}
+  /*TABLET VIEW*/
+    
+    
+    
+/*DESKTOP VIEW*/
+@media only screen and (min-width: 850px) {
+ 
+div.container {
+    display: flex;
+    height: auto;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+div.sub_container {
+    display: block;
+    margin:0 0 0 250px;
+    width: calc(100% - 250px);
+}
+
+.profile_container {
+    background: white;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    margin: auto;
+}
+
+h2 {
+    font-size: 22px;
+    color: #0E2E45;
+    margin-bottom: 10px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 15px 0;
+}
+
+/* Profile Photo */
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ddd;
+}
+
+.profile label {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #268AC7;
+    border: 1px solid #268AC7;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.profile label:hover {
+    background: #268AC7;
+    color: white;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+/* Form Fields */
+.field {
+    margin-bottom: 15px;
+}
+
+.field label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.field input, .field textarea, .field select {
+    resize: none;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #333;
+}
+
+.field input:focus, .field textarea:focus, .field select:focus {
+    border-color: #268AC7;
+    outline: none;
+    box-shadow: 0 0 5px rgba(38, 138, 199, 0.5);
+}
+
+/* Submit Button */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    color: white;
+    background: #268AC7;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background: #1e6c99;
+}
+}
+/*DESKTOP VIEW*/

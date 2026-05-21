@@ -1,0 +1,301 @@
+/*MOBILE VIEW*/
+@media only screen and (max-width:  820px) {
+    body {
+      margin: 0;
+      padding: 0;
+    } 
+     
+/* FOR SUPPORT PAGE */
+
+/*mail sent div*/
+div.success {
+    background-color: white;
+    width: 80%;
+    position:  absolute;
+    top: 40%;
+    left: 10%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 1;
+    border: 1px solid rgb(204, 198, 198);
+}
+div.success .heading {
+    font-family: 'Open sans';
+    margin: 0px 0px 10px 0px;
+    background-color: red;
+    padding: 10px 10px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+div.success div.heading p{
+    margin: 0;
+    font-size: 14px;
+    font-weight: bolder;
+    color: white;
+}
+div.success div.info {
+font-family: 'Open sans';
+background-color: white;
+width: 100%;
+padding: 0px 20px;
+box-sizing: border-box;
+margin: 18px auto 18px auto;
+}
+div.success div.info p {
+    font-family: 'Open sans'; 
+    font-size: 12px;
+    line-height: 20px;
+    margin: 0;
+    color: gray;
+    font-weight: lighter;
+    word-wrap: break-word;
+}
+ div.success div.info b{
+    display: block;
+    margin: 5px 0px 0px 0px; 
+    font-weight: bolder;
+    font-size: 13px;
+    text-decoration: none;
+    color: green;
+    font-family: 'Open sans';
+}
+div.success div.info p.support {
+   display: block;
+   cursor: pointer;
+   border: 1px solid blue;
+   border-radius: 4px;
+   font-size: 12px;
+   color: white;
+   font-weight: bold;
+   padding: 2px 7px;
+   background-color: blue;
+   width: 38px;
+   margin-top: 10px;
+   
+}
+/*mail sent div*/
+
+
+/*mail not sent div*/
+div.failure {
+    background-color: white;
+    width: 80%;
+    position:  absolute;
+    top: 40%;
+    left: 10%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 1;
+    border: 1px solid rgb(204, 198, 198);
+}
+div.failure .heading {
+    font-family: 'Open sans';
+    margin: 0px 0px 10px 0px;
+    background-color: red;
+    padding: 10px 10px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+div.failure div.heading p{
+    margin: 0;
+    font-size: 14px;
+    font-weight: bolder;
+    color: white;
+}
+div.failure div.info {
+font-family: 'Open sans';
+background-color: white;
+width: 100%;
+padding: 0px 20px;
+margin: 18px auto 18px auto;
+}
+div.failure div.info p {
+    font-family: 'Open sans'; 
+    font-size: 12px;
+    line-height: 20px;
+    margin: 0;
+    color: gray;
+    font-weight: lighter;
+    word-wrap: break-word;
+}
+ div.failure div.info b{
+    display: block;
+    margin: 5px 0px 0px 0px; 
+    font-weight: bolder;
+    font-size: 13px;
+    text-decoration: none;
+    color: green;
+    font-family: 'Open sans';
+}
+div.failure div.info p.support {
+   display: block;
+   cursor: pointer;
+   border: 1px solid blue;
+   border-radius: 4px;
+   font-size: 12px;
+   color: white;
+   font-weight: bold;
+   padding: 2px 7px;
+   background-color: blue;
+   width: 38px;
+   margin-top: 10px;
+   
+}
+/*mail not sent div*/
+.dissapear {
+    display: none;
+}
+/* FOR SUPPORT PAGE */
+}
+    /*MOBILE VIEW*/
+    
+    
+    /*DESKTOP VIEW*/
+    @media only screen and (min-width:  820px) {
+        body {
+          margin: 0;
+          padding: 0;
+        } 
+/* FOR SUPPORT PAGE */
+
+/*mail sent div*/
+div.success {
+    background-color: white;
+    width: 400px;
+    position:  absolute;
+    top: 40%;
+    left: 35%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 1;
+    border: 1px solid rgb(204, 198, 198);
+}
+div.success .heading {
+    font-family: 'Open sans';
+    margin: 0px 0px 10px 0px;
+    background-color: red;
+    padding: 10px 10px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+div.success div.heading p{
+    margin: 0;
+    font-size: 14px;
+    font-weight: bolder;
+    color: white;
+}
+div.success div.info {
+font-family: 'Open sans';
+background-color: white;
+width: 100%;
+padding: 0px 20px;
+margin: 18px auto 18px auto;
+box-sizing: border-box;
+}
+div.success div.info p {
+    font-family: 'Open sans'; 
+    font-size: 12px;
+    line-height: 20px;
+    margin: 0;
+    color: gray;
+    font-weight: lighter;
+    word-wrap: break-word;
+}
+ div.success div.info b{
+    display: block;
+    margin: 5px 0px 0px 0px; 
+    font-weight: bolder;
+    font-size: 13px;
+    text-decoration: none;
+    color: green;
+    font-family: 'Open sans';
+}
+div.success div.info p.support {
+   display: block;
+   cursor: pointer;
+   border: 1px solid blue;
+   border-radius: 4px;
+   font-size: 12px;
+   color: white;
+   font-weight: bold;
+   padding: 2px 7px;
+   background-color: blue;
+   width: 38px;
+   margin-top: 10px;
+   
+}
+/*mail sent div*/
+
+
+/*mail not sent div*/
+div.failure {
+    background-color: white;
+    position:  absolute;
+    width: 400px;
+    top: 40%;
+    left: 35%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 1;
+    border: 1px solid rgb(204, 198, 198);
+}
+div.failure .heading {
+    font-family: 'Open sans';
+    margin: 0px 0px 10px 0px;
+    background-color: red;
+    padding: 10px 10px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+div.failure div.heading p{
+    margin: 0;
+    font-size: 14px;
+    font-weight: bolder;
+    color: white;
+}
+div.failure div.info {
+width: 100%;
+font-family: 'Open sans';
+background-color: white;
+padding: 0px 10px;
+margin: 18px auto 18px auto;
+box-sizing: border-box;
+}
+div.failure div.info p {
+    font-family: 'Open sans'; 
+    font-size: 12px;
+    line-height: 20px;
+    display: block;
+    padding: 0;
+    margin: 0;
+    color: gray;
+    font-weight: lighter;
+    word-wrap: break-word;
+}
+ div.failure div.info b{
+    display: block;
+    margin: 5px 0px 0px 0px; 
+    font-weight: bolder;
+    font-size: 13px;
+    text-decoration: none;
+    color: green;
+    font-family: 'Open sans';
+}
+div.failure div.info p.support {
+   display: block;
+   cursor: pointer;
+   border: 1px solid blue;
+   border-radius: 4px;
+   font-size: 12px;
+   color: white;
+   font-weight: bold;
+   padding: 2px 7px;
+   background-color: blue;
+   width: 38px;
+   margin-top: 10px;
+   
+}
+.dissapear {
+    display: none;
+}
+/*mail not sent div*/
+
+/* FOR SUPPORT PAGE */
+        }
+        /*DESKTOP VIEW*/

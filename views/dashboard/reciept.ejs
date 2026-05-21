@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="google" content="notranslate">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <script src="https://kit.fontawesome.com/0855e51304.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src = "/assets/js/interactive.js"></script>
+  <link rel="icon" href="assets/img/favicon.png" type="image/x-icon" />
+  <title>Transaction reciept</title>
+</head>
+<body>
+
+  <style>
+     /*DESKTOP VIEW*/
+    @media only screen and (min-width:  820px) {
+    div.reciept{
+      margin: 100px auto 100px auto;  
+      width: 500px;
+      padding-bottom: 11px;
+      box-shadow: 20px 20px 50px 15px grey;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    div.reciept h1{
+      font-size: 18px;
+      background-color: rgb(74, 190, 236);
+      margin: 0px;
+      padding: 10px 0px;
+      color: white;
+      text-align: center;
+      width: 100%;
+    }
+    div.icon {
+      text-align: center;
+      width: 90%;
+      margin: 20px auto;
+    }
+    div.icon i{
+      color: rgb(74, 190, 236);
+      font-size: 43px;
+    }
+    div.icon p{
+      font-size: 17px;
+    }
+    div.details {
+        padding: 0px 10px;
+    }
+    div.details p small {
+        font-weight: normal; 
+        font-size: 16px; 
+        float: right;
+    }
+    div.reciept a {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        width: 100px;
+        margin: 12px auto 0px auto;
+        padding: 7px 0px;
+        font-weight: bold;
+        border: 1px solid rgb(74, 190, 236);
+        background-color: rgb(74, 190, 236);
+        color: white;
+        border-radius: 7px;
+    }
+  }
+
+   /*MOBILE VIEW*/
+   @media only screen and (max-width:  820px) {
+    div.reciept{
+      margin: 80px auto 80px auto;
+      width: 90%;
+      padding-bottom: 11px;
+      box-shadow: 20px 20px 50px 15px grey;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    div.reciept h1{
+      font-size: 18px;
+      background-color: rgb(74, 190, 236);
+      margin: 0px;
+      padding: 10px 0px;
+      color: white;
+      text-align: center;
+      width: 100%;
+    }
+    div.icon {
+      text-align: center;
+      width: 90%;
+      margin: 20px auto;
+    }
+    div.icon i{
+      color: rgb(74, 190, 236);
+      font-size: 43px;
+    }
+    div.icon p{
+      font-size: 17px;
+    }
+    div.details {
+        padding: 0px 10px;
+    }
+    div.details p{
+        font-size: 15px;
+        font-weight: bold;
+    }
+    div.details p small {
+        font-weight: normal; 
+        font-size: 15px; 
+        float: right;
+    }
+    div.reciept a {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        width: 100px;
+        margin: 12px auto 0px auto;
+        padding: 7px 0px;
+        font-size: 15px;
+        font-weight: bold;
+        border: 1px solid rgb(74, 190, 236);
+        background-color: rgb(74, 190, 236);
+        color: white;
+        border-radius: 7px;
+    }
+}
+  </style>
+
+  <div class = 'reciept'>
+    
+    <h1>Successful</h1>
+
+    <div class = "icon">
+        <i class="fa-regular fa-circle-check"></i>
+        <p>Transaction Successful</p>
+    </div>
+    
+    <hr>
+
+    <div class = "details">
+      <p style = "font-weight: bold;">paid On <small id = "date">01/march/2024</small></p>
+      <p style = "font-weight: bold;">Sender <small id = "sender">Agbaoje Moses</small></p>
+      <p style = "font-weight: bold;">Beneficiary <small id = "beneficiary">Agbaoje Daniel</small></p>
+      <p style = "font-weight: bold;">Beneficiary Bank <small id = "beneficiary_bank">Gt Bank</small></p>
+      <p style = "font-weight: bold;">Amount <small id = "amount">$12000</small></p>
+    </div>
+
+    <hr>
+
+    <a href = "/account/dashboard">Done</a>
+
+  </div>
+
+<div id="google_translate_element" style="display:none"></div>
+  <!-- define function BEFORE loading Google Translate -->
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: "en"}, 'google_translate_element');
+}
+
+function changeLanguageByButtonClick() {
+  var language = document.getElementById("language").value;
+  var selectField = document.querySelector("#google_translate_element select");
+  for (var i = 0; i < selectField.children.length; i++) {
+    var option = selectField.children[i];
+    if (option.value === language) {
+      selectField.selectedIndex = i;
+      selectField.dispatchEvent(new Event('change'));
+      break;
+    }
+  }
+}
+</script>
+
+<!-- Now load the script -->
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+   
+    <script>
+      window.onload = function () {
+          const currencyCode = "<%= user.currencyCode %>"
+          let date= document.getElementById("date");
+          let sender = document.getElementById("sender");
+          let beneficiary = document.getElementById("beneficiary");
+          let beneficiary_bank = document.getElementById("beneficiary_bank");
+          let amount = document.getElementById("amount");
+
+ 
+
+          date.innerHTML = `${localStorage.getItem("date")}`
+          sender.innerHTML = `${localStorage.getItem("sender")}`
+          beneficiary.innerHTML = `${localStorage.getItem("beneficiary")}`
+          beneficiary_bank.innerHTML = `${localStorage.getItem("beneficiary_bank")}`
+          amount.innerHTML = `${new Intl.NumberFormat("en-US", {style: "currency", currency: currencyCode}).format(localStorage.getItem("amount"))}`
+      }
+  </script>
+</body>
+</html>
