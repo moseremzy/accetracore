@@ -124,6 +124,8 @@ module.exports = class API {
       }
             
       } catch (error) {
+
+        console.log(error.message)
             
         res.render("register", {message: "There was an error, try again"})          
 

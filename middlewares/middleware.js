@@ -74,6 +74,8 @@ static async SendConfirmationMail(req, res, useremail, confirmationCode, firstna
     return 'successful';
 
   } catch (err) {
+
+    console.log(err.message)
      
     return 'error occurred';
     

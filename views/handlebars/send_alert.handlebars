@@ -180,13 +180,13 @@
 <body>
   <div class="container">
     <div class="header">
-      <h1>{{bankName.toUpperCase()}} BANK</h1>
+      <h1 style="text-transform: uppercase;">{{bankName}} BANK</h1>
     </div>
 
     <div class="body">
       <div class="greeting">
         <p>Dear <strong>{{receiver_name}}</strong>,</p>
-        <p>We are pleased to inform you that your {{bankName.toUpperCase()}} account has been credited.</p>
+        <p>We are pleased to inform you that your <strong style="text-transform: uppercase;">{{bankName}}</strong> account has been credited.</p>
       </div>
 
       <div class="transaction-details">
@@ -238,8 +238,8 @@
     </div>
 
     <div class="footer">
-      <p>&copy; {{year}} {{bankName.toUpperCase()}} Bank. All rights reserved.</p>
-      <p>{{bankName.toUpperCase()}} Bank</p>
+      <p>&copy; {{year}} {{bankName}} Bank. All rights reserved.</p>
+      <p style="text-transform: uppercase;">{{bankName}} Bank</p>
     </div>
   </div>
 </body>
